@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{413546DC-AF1B-4AA2-8B5F-C788527ECA52}</ProjectGuid>
+    <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>iOS.DS.GameLibrary</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>iOS.DS.GameLibrary</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Assemblies\iOS</OutputPath>
+    <DefineConstants>DEBUG;IOS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Assemblies\iOS</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <DefineConstants>IOS</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="monotouch" />
+    <Reference Include="mscorlib" />
+    <Reference Include="OpenTK" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Lidgren.Network">
+      <HintPath>..\Assemblies\iOS\Lidgren.Network.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoGame.Framework">
+      <HintPath>..\Assemblies\iOS\MonoGame.Framework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="..\Android.DS.GameLibrary\Advertising\CustomFallbackAdGameComponent.cs">
+      <Link>Advertising\CustomFallbackAdGameComponent.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Advertising\MicrosoftAdsManager.cs">
+      <Link>Advertising\MicrosoftAdsManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Analytics\IAnalyticsService.cs">
+      <Link>Analytics\IAnalyticsService.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Analytics\Flurry\FlurryAnalyticsService.cs">
+      <Link>Analytics\Flurry\FlurryAnalyticsService.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Animation\AnimatedLayerObject.cs">
+      <Link>Animation\AnimatedLayerObject.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Animation\DirectorTransition.cs">
+      <Link>Animation\DirectorTransition.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Animation\FadeDirectorTransition.cs">
+      <Link>Animation\FadeDirectorTransition.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Animation\FrameBasedAnimatedLayerObject.cs">
+      <Link>Animation\FrameBasedAnimatedLayerObject.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Animation\MaskSwipeDirectorTransition.cs">
+      <Link>Animation\MaskSwipeDirectorTransition.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Animation\Timer.cs">
+      <Link>Animation\Timer.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Animation\TimerCollection.cs">
+      <Link>Animation\TimerCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Animation\TweenerCollection.cs">
+      <Link>Animation\TweenerCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Animation\Tween\Back.cs">
+      <Link>Animation\Tween\Back.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Animation\Tween\Bounce.cs">
+      <Link>Animation\Tween\Bounce.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Animation\Tween\Circular.cs">
+      <Link>Animation\Tween\Circular.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Animation\Tween\Cubic.cs">
+      <Link>Animation\Tween\Cubic.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Animation\Tween\Elastic.cs">
+      <Link>Animation\Tween\Elastic.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Animation\Tween\Exponential.cs">
+      <Link>Animation\Tween\Exponential.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Animation\Tween\Linear.cs">
+      <Link>Animation\Tween\Linear.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Animation\Tween\Quadratic.cs">
+      <Link>Animation\Tween\Quadratic.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Animation\Tween\Quartic.cs">
+      <Link>Animation\Tween\Quartic.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Animation\Tween\Quintic.cs">
+      <Link>Animation\Tween\Quintic.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Animation\Tween\Sinusoidal.cs">
+      <Link>Animation\Tween\Sinusoidal.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Animation\Tween\Tweener.cs">
+      <Link>Animation\Tween\Tweener.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Camera\Camera2D.cs">
+      <Link>Camera\Camera2D.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Core\AccelerometerManager.cs">
+      <Link>Core\AccelerometerManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Core\ApplicationLifeCycleManager.cs">
+      <Link>Core\ApplicationLifeCycleManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Core\DeviceInfo.cs">
+      <Link>Core\DeviceInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Core\Director.cs">
+      <Link>Core\Director.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Core\IManager.cs">
+      <Link>Core\IManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Core\NetworkManager.cs">
+      <Link>Core\NetworkManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Core\PrimitiveBatch.cs">
+      <Link>Core\PrimitiveBatch.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Core\ResourcesManager.cs">
+      <Link>Core\ResourcesManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Core\SettingsManager.cs">
+      <Link>Core\SettingsManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Core\SoundManager.cs">
+      <Link>Core\SoundManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Core\VibratorManager.cs">
+      <Link>Core\VibratorManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Entity\Player.cs">
+      <Link>Entity\Player.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Extensions\Extensions.cs">
+      <Link>Extensions\Extensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Interaction\ITouchableContainer.cs">
+      <Link>Interaction\ITouchableContainer.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Interaction\TouchPanelManager.cs">
+      <Link>Interaction\TouchPanelManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Logic\LevelLogic.cs">
+      <Link>Logic\LevelLogic.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Logic\Spline.cs">
+      <Link>Logic\Spline.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Logic\SplinePoint.cs">
+      <Link>Logic\SplinePoint.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Logic\TileInfo.cs">
+      <Link>Logic\TileInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Persistence\IApplicationActivationAware.cs">
+      <Link>Persistence\IApplicationActivationAware.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Persistence\IApplicationDeactivationAware.cs">
+      <Link>Persistence\IApplicationDeactivationAware.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Persistence\Serializers\AbstractSerializer.cs">
+      <Link>Persistence\Serializers\AbstractSerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Persistence\Serializers\DataContractSerializer.cs">
+      <Link>Persistence\Serializers\DataContractSerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Social\Achievements\Achievement.cs">
+      <Link>Social\Achievements\Achievement.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Social\Achievements\AchievementData.cs">
+      <Link>Social\Achievements\AchievementData.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Social\Achievements\AchievementsManager.cs">
+      <Link>Social\Achievements\AchievementsManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Social\Gaming\Score.cs">
+      <Link>Social\Gaming\Score.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Social\Gaming\ScoreloopService.cs">
+      <Link>Social\Gaming\ScoreloopService.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\UI\BitmapText.cs">
+      <Link>UI\BitmapText.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\UI\Button.cs">
+      <Link>UI\Button.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\UI\ITouchable.cs">
+      <Link>UI\ITouchable.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\UI\IUpdateable.cs">
+      <Link>UI\IUpdateable.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\UI\Layer.cs">
+      <Link>UI\Layer.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\UI\LayerGroup.cs">
+      <Link>UI\LayerGroup.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\UI\LayerObject.cs">
+      <Link>UI\LayerObject.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\UI\LeaderboardItem.cs">
+      <Link>UI\LeaderboardItem.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\UI\ListView.cs">
+      <Link>UI\ListView.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\UI\ListViewItem.cs">
+      <Link>UI\ListViewItem.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\UI\PageableLayer.cs">
+      <Link>UI\PageableLayer.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\UI\PushButton.cs">
+      <Link>UI\PushButton.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\UI\Scene.cs">
+      <Link>UI\Scene.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\UI\SelectableButton.cs">
+      <Link>UI\SelectableButton.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\UI\SimpleTextureButton.cs">
+      <Link>UI\SimpleTextureButton.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\UI\SlideCheckbox.cs">
+      <Link>UI\SlideCheckbox.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\UI\Text.cs">
+      <Link>UI\Text.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\UI\Texture.cs">
+      <Link>UI\Texture.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Utils\DebugInfo.cs">
+      <Link>Utils\DebugInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Utils\DeviceStatus.cs">
+      <Link>Utils\DeviceStatus.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Utils\GuideHelper.cs">
+      <Link>Utils\GuideHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Utils\Logger.cs">
+      <Link>Utils\Logger.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Utils\PhysicsTools.cs">
+      <Link>Utils\PhysicsTools.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Utils\Rand.cs">
+      <Link>Utils\Rand.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Utils\TasksUtils.cs">
+      <Link>Utils\TasksUtils.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.GameLibrary\Core\ScreenResolutionManager.cs">
+      <Link>Core\ScreenResolutionManager.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\iOS.3rdParty.MercuryParticleEngine\iOS.3rdParty.MercuryParticleEngine.csproj">
+      <Project>{C3048D9F-AE6D-4629-92CF-D2E37DFBF2D9}</Project>
+      <Name>iOS.3rdParty.MercuryParticleEngine</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

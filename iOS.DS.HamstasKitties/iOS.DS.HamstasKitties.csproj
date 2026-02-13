@@ -1,0 +1,1210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8001BD7A-64D6-47E2-A072-FE3C5345A29C}</ProjectGuid>
+    <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>iOS.DS.HamstasKitties</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>iOSDSHamstasKitties</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchLink>None</MtouchLink>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchI18n />
+    <MtouchArch>ARMv7</MtouchArch>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchLink>None</MtouchLink>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignKey>iPhone Distribution: Plumbee Ltd</CodesignKey>
+    <IpaPackageName />
+    <MtouchI18n />
+    <MtouchArch>ARMv7</MtouchArch>
+    <BuildIpa>true</BuildIpa>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Distribution: Plumbee Ltd</CodesignKey>
+    <MtouchUseLlvm>true</MtouchUseLlvm>
+    <MtouchUseThumb>true</MtouchUseThumb>
+    <MtouchI18n />
+    <MtouchArch>ARMv7</MtouchArch>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Ad-Hoc</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <BuildIpa>true</BuildIpa>
+    <ConsolePause>false</ConsolePause>
+    <CodesignProvision>Automatic:AdHoc</CodesignProvision>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <IpaPackageName />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\AppStore</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <CodesignProvision>Automatic:AppStore</CodesignProvision>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="monotouch" />
+    <Reference Include="OpenTK" />
+    <Reference Include="Lidgren.Network">
+      <HintPath>..\Assemblies\iOS\Lidgren.Network.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoGame.Framework">
+      <HintPath>..\Assemblies\iOS\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Runtime.Serialization" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="..\Android.DS.HamstasKitties\Utils.cs">
+      <Link>Utils.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Achievements\ComboAchievement.cs">
+      <Link>Achievements\ComboAchievement.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Achievements\GameModeAchievement.cs">
+      <Link>Achievements\GameModeAchievement.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Achievements\ItemsCreatedAchievement.cs">
+      <Link>Achievements\ItemsCreatedAchievement.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Achievements\ItemsRemovalAchievement.cs">
+      <Link>Achievements\ItemsRemovalAchievement.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Achievements\LevelAchievement.cs">
+      <Link>Achievements\LevelAchievement.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Achievements\ScoreAchievement.cs">
+      <Link>Achievements\ScoreAchievement.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Achievements\ScreenClearedAchievement.cs">
+      <Link>Achievements\ScreenClearedAchievement.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Achievements\UnlockedSpecialTypeAchievement.cs">
+      <Link>Achievements\UnlockedSpecialTypeAchievement.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Constants\AnalyticsConstants.cs">
+      <Link>Constants\AnalyticsConstants.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Constants\GlobalConstants.cs">
+      <Link>Constants\GlobalConstants.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Constants\PersistableSettingsConstants.cs">
+      <Link>Constants\PersistableSettingsConstants.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Constants\ScoreConstants.cs">
+      <Link>Constants\ScoreConstants.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Constants\ScoreloopConstants.cs">
+      <Link>Constants\ScoreloopConstants.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Constants\UILayoutConstants.cs">
+      <Link>Constants\UILayoutConstants.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Extras\SoundPushButton.cs">
+      <Link>Extras\SoundPushButton.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Layers\AchievementMenuContentLayer.cs">
+      <Link>Layers\AchievementMenuContentLayer.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Layers\AchievementPopupBGLayer.cs">
+      <Link>Layers\AchievementPopupBGLayer.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Layers\AchievementPopupButtonsLayer.cs">
+      <Link>Layers\AchievementPopupButtonsLayer.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Layers\AchievementsMenuContentTitleLayer.cs">
+      <Link>Layers\AchievementsMenuContentTitleLayer.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Layers\AchievementsMenuOverLayer.cs">
+      <Link>Layers\AchievementsMenuOverLayer.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Layers\HUDLayer.cs">
+      <Link>Layers\HUDLayer.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Layers\LeadersboardMenuContentLayer.cs">
+      <Link>Layers\LeadersboardMenuContentLayer.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Layers\LeadersboardMenuContentTitleLayer.cs">
+      <Link>Layers\LeadersboardMenuContentTitleLayer.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Layers\LeadersboardMenuOverLayer.cs">
+      <Link>Layers\LeadersboardMenuOverLayer.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Layers\LevelBackgroundPanelLayer.cs">
+      <Link>Layers\LevelBackgroundPanelLayer.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Layers\LevelBlocksPanelLayer.cs">
+      <Link>Layers\LevelBlocksPanelLayer.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Layers\LevelGameOverMenuLayer.cs">
+      <Link>Layers\LevelGameOverMenuLayer.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Layers\LevelPauseMenuLayer.cs">
+      <Link>Layers\LevelPauseMenuLayer.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Layers\MainMenuBackgroundPanelLayer.cs">
+      <Link>Layers\MainMenuBackgroundPanelLayer.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Layers\MainMenuGameModesButtonsLayer.cs">
+      <Link>Layers\MainMenuGameModesButtonsLayer.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Layers\MainMenuOptionsButtonsLayer.cs">
+      <Link>Layers\MainMenuOptionsButtonsLayer.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Layers\MainMenuTitleLayer.cs">
+      <Link>Layers\MainMenuTitleLayer.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Layers\NewGameMenuButtonsLayer.cs">
+      <Link>Layers\NewGameMenuButtonsLayer.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Layers\OptionsMenuContentLayer.cs">
+      <Link>Layers\OptionsMenuContentLayer.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Layers\TimeRemainingLayer.cs">
+      <Link>Layers\TimeRemainingLayer.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Layers\TutorialContentLayer.cs">
+      <Link>Layers\TutorialContentLayer.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Management\BestScoresManager.cs">
+      <Link>Management\BestScoresManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Management\GameDirector.cs">
+      <Link>Management\GameDirector.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Management\GameStateManager.cs">
+      <Link>Management\GameStateManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Mechanics\Block.cs">
+      <Link>Mechanics\Block.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Mechanics\BlocksMiniPhysicsEngine.cs">
+      <Link>Mechanics\BlocksMiniPhysicsEngine.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Mechanics\ComboManager.cs">
+      <Link>Mechanics\ComboManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Mechanics\LevelBoardController.cs">
+      <Link>Mechanics\LevelBoardController.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Mechanics\MatchingGroup.cs">
+      <Link>Mechanics\MatchingGroup.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Mechanics\QueuedLevelAnimation.cs">
+      <Link>Mechanics\QueuedLevelAnimation.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Mechanics\Emitters\BlockEmitter.cs">
+      <Link>Mechanics\Emitters\BlockEmitter.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Mechanics\Emitters\ChilloutModeBlockEmitter.cs">
+      <Link>Mechanics\Emitters\ChilloutModeBlockEmitter.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Mechanics\Emitters\ClassicModeBlockEmitter.cs">
+      <Link>Mechanics\Emitters\ClassicModeBlockEmitter.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Mechanics\Emitters\CountdownModeBlockEmitter.cs">
+      <Link>Mechanics\Emitters\CountdownModeBlockEmitter.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Mechanics\Emitters\GoldRushModeBlockEmitter.cs">
+      <Link>Mechanics\Emitters\GoldRushModeBlockEmitter.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Persistence\BestScore.cs">
+      <Link>Persistence\BestScore.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Persistence\BlockState.cs">
+      <Link>Persistence\BlockState.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Persistence\BoardState.cs">
+      <Link>Persistence\BoardState.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Persistence\GameModeState.cs">
+      <Link>Persistence\GameModeState.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Persistence\GameState.cs">
+      <Link>Persistence\GameState.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Scenes\AchievementPopup.cs">
+      <Link>Scenes\AchievementPopup.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Scenes\IntroScene.cs">
+      <Link>Scenes\IntroScene.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Scenes\SplashScreen.cs">
+      <Link>Scenes\SplashScreen.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Scenes\GameModes\ChilloutMode.cs">
+      <Link>Scenes\GameModes\ChilloutMode.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Scenes\GameModes\ClassicMode.cs">
+      <Link>Scenes\GameModes\ClassicMode.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Scenes\GameModes\CountdownMode.cs">
+      <Link>Scenes\GameModes\CountdownMode.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Scenes\GameModes\GoldRushMode.cs">
+      <Link>Scenes\GameModes\GoldRushMode.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Scenes\GameModes\Level.cs">
+      <Link>Scenes\GameModes\Level.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Scenes\Menus\AboutMenu.cs">
+      <Link>Scenes\Menus\AboutMenu.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Scenes\Menus\AchievementsMenu.cs">
+      <Link>Scenes\Menus\AchievementsMenu.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Scenes\Menus\LeadersboardMenu.cs">
+      <Link>Scenes\Menus\LeadersboardMenu.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Scenes\Menus\LevelGameOverMenu.cs">
+      <Link>Scenes\Menus\LevelGameOverMenu.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Scenes\Menus\LevelPauseMenu.cs">
+      <Link>Scenes\Menus\LevelPauseMenu.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Scenes\Menus\MainMenu.cs">
+      <Link>Scenes\Menus\MainMenu.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Scenes\Menus\NewGameMenu.cs">
+      <Link>Scenes\Menus\NewGameMenu.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Scenes\Menus\OptionsMenu.cs">
+      <Link>Scenes\Menus\OptionsMenu.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Scenes\Menus\TutorialMenu.cs">
+      <Link>Scenes\Menus\TutorialMenu.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\HamstasKittiesGame.cs">
+      <Link>HamstasKittiesGame.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Sprites\AchievementEntry.cs">
+      <Link>Sprites\AchievementEntry.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Sprites\BoardClearedBitmapText.cs">
+      <Link>Sprites\BoardClearedBitmapText.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Sprites\ComboText.cs">
+      <Link>Sprites\ComboText.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Sprites\GoldenHamstaSparkle.cs">
+      <Link>Sprites\GoldenHamstaSparkle.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Sprites\LeaderboardEntry.cs">
+      <Link>Sprites\LeaderboardEntry.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Sprites\LevelUpBitmapText.cs">
+      <Link>Sprites\LevelUpBitmapText.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Sprites\ProgressBar.cs">
+      <Link>Sprites\ProgressBar.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Sprites\RainbowEffect.cs">
+      <Link>Sprites\RainbowEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Sprites\RandomPairOfBlinkingEyes.cs">
+      <Link>Sprites\RandomPairOfBlinkingEyes.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Sprites\RisingUpPointsText.cs">
+      <Link>Sprites\RisingUpPointsText.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.DS.HamstasKitties\Sprites\ZoomInFadeOutText.cs">
+      <Link>Sprites\ZoomInFadeOutText.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="..\Android.DS.HamstasKitties\Assets\Content\ParticleEffects\BigExplosion.xnb">
+      <Link>Content\ParticleEffects\BigExplosion.xnb</Link>
+    </None>
+    <None Include="..\Android.DS.HamstasKitties\Assets\Content\ParticleEffects\Bubbles.xnb">
+      <Link>Content\ParticleEffects\Bubbles.xnb</Link>
+    </None>
+    <None Include="..\Android.DS.HamstasKitties\Assets\Content\ParticleEffects\GokuPower.xnb">
+      <Link>Content\ParticleEffects\GokuPower.xnb</Link>
+    </None>
+    <None Include="..\Android.DS.HamstasKitties\Assets\Content\ParticleEffects\MagicBomb.xnb">
+      <Link>Content\ParticleEffects\MagicBomb.xnb</Link>
+    </None>
+    <None Include="..\Android.DS.HamstasKitties\Assets\Content\ParticleEffects\MagicTrail.xnb">
+      <Link>Content\ParticleEffects\MagicTrail.xnb</Link>
+    </None>
+    <None Include="..\Android.DS.HamstasKitties\Assets\Content\ParticleEffects\SmokePoof.xnb">
+      <Link>Content\ParticleEffects\SmokePoof.xnb</Link>
+    </None>
+    <None Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Fonts\AKADYLAN PLAIN.TTF">
+      <Link>Content\Sprites\Fonts\AKADYLAN PLAIN.TTF</Link>
+    </None>
+    <None Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Fonts\CHUBBY.TTF">
+      <Link>Content\Sprites\Fonts\CHUBBY.TTF</Link>
+    </None>
+    <None Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\SpriteSheetPacker\Sprite Sheet Packer.exe">
+      <Link>Content\Sprites\SpriteSheetPacker\Sprite Sheet Packer.exe</Link>
+    </None>
+    <None Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\SpriteSheetPacker\SpriteSheetPacker.XnaExporters.dll">
+      <Link>Content\Sprites\SpriteSheetPacker\SpriteSheetPacker.XnaExporters.dll</Link>
+    </None>
+    <None Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\SpriteSheetPacker\sspack.exe">
+      <Link>Content\Sprites\SpriteSheetPacker\sspack.exe</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\AkaDylan32OutlinedSpriteFont.png">
+      <Link>Content\AkaDylan32OutlinedSpriteFont.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Explosion.png">
+      <Link>Content\Explosion.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\JessicaRainbowExplosion.png">
+      <Link>Content\JessicaRainbowExplosion.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Laser.png">
+      <Link>Content\Laser.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\LaserUp.png">
+      <Link>Content\LaserUp.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Particle004.png">
+      <Link>Content\Particle004.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Particle005.png">
+      <Link>Content\Particle005.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Square.png">
+      <Link>Content\Square.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Star.png">
+      <Link>Content\Star.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\BlankPixel.png">
+      <Link>Content\Sprites\BlankPixel.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\ClassicModeBG.png">
+      <Link>Content\Sprites\ClassicModeBG.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\CountdownModeBG.png">
+      <Link>Content\Sprites\CountdownModeBG.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\DroppinModeBG.png">
+      <Link>Content\Sprites\DroppinModeBG.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\RelaxModeBG.png">
+      <Link>Content\Sprites\RelaxModeBG.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Splash.png">
+      <Link>Content\Sprites\Splash.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\SwipeTransitionMask.png">
+      <Link>Content\Sprites\SwipeTransitionMask.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Fonts\SpriteFonts\BoardClearedBoard.png">
+      <Link>Content\Sprites\Fonts\SpriteFonts\BoardClearedBoard.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Fonts\SpriteFonts\BoardClearedCleared.png">
+      <Link>Content\Sprites\Fonts\SpriteFonts\BoardClearedCleared.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Fonts\SpriteFonts\BoardClearedScore.png">
+      <Link>Content\Sprites\Fonts\SpriteFonts\BoardClearedScore.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Fonts\SpriteFonts\Countdown0.png">
+      <Link>Content\Sprites\Fonts\SpriteFonts\Countdown0.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Fonts\SpriteFonts\Countdown1.png">
+      <Link>Content\Sprites\Fonts\SpriteFonts\Countdown1.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Fonts\SpriteFonts\Countdown2.png">
+      <Link>Content\Sprites\Fonts\SpriteFonts\Countdown2.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Fonts\SpriteFonts\Countdown3.png">
+      <Link>Content\Sprites\Fonts\SpriteFonts\Countdown3.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Fonts\SpriteFonts\Countdown4.png">
+      <Link>Content\Sprites\Fonts\SpriteFonts\Countdown4.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Fonts\SpriteFonts\Countdown5.png">
+      <Link>Content\Sprites\Fonts\SpriteFonts\Countdown5.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Fonts\SpriteFonts\Countdown6.png">
+      <Link>Content\Sprites\Fonts\SpriteFonts\Countdown6.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Fonts\SpriteFonts\Countdown7.png">
+      <Link>Content\Sprites\Fonts\SpriteFonts\Countdown7.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Fonts\SpriteFonts\Countdown8.png">
+      <Link>Content\Sprites\Fonts\SpriteFonts\Countdown8.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Fonts\SpriteFonts\Countdown9.png">
+      <Link>Content\Sprites\Fonts\SpriteFonts\Countdown9.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Fonts\SpriteFonts\CountdownSeparator.png">
+      <Link>Content\Sprites\Fonts\SpriteFonts\CountdownSeparator.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Fonts\SpriteFonts\LevelClearedLevel.png">
+      <Link>Content\Sprites\Fonts\SpriteFonts\LevelClearedLevel.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Fonts\SpriteFonts\LevelClearedNumber0.png">
+      <Link>Content\Sprites\Fonts\SpriteFonts\LevelClearedNumber0.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Fonts\SpriteFonts\LevelClearedNumber1.png">
+      <Link>Content\Sprites\Fonts\SpriteFonts\LevelClearedNumber1.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Fonts\SpriteFonts\LevelClearedNumber2.png">
+      <Link>Content\Sprites\Fonts\SpriteFonts\LevelClearedNumber2.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Fonts\SpriteFonts\LevelClearedNumber3.png">
+      <Link>Content\Sprites\Fonts\SpriteFonts\LevelClearedNumber3.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Fonts\SpriteFonts\LevelClearedNumber4.png">
+      <Link>Content\Sprites\Fonts\SpriteFonts\LevelClearedNumber4.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Fonts\SpriteFonts\LevelClearedNumber5.png">
+      <Link>Content\Sprites\Fonts\SpriteFonts\LevelClearedNumber5.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Fonts\SpriteFonts\LevelClearedNumber6.png">
+      <Link>Content\Sprites\Fonts\SpriteFonts\LevelClearedNumber6.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Fonts\SpriteFonts\LevelClearedNumber7.png">
+      <Link>Content\Sprites\Fonts\SpriteFonts\LevelClearedNumber7.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Fonts\SpriteFonts\LevelClearedNumber8.png">
+      <Link>Content\Sprites\Fonts\SpriteFonts\LevelClearedNumber8.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Fonts\SpriteFonts\LevelClearedNumber9.png">
+      <Link>Content\Sprites\Fonts\SpriteFonts\LevelClearedNumber9.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Fonts\SpriteFonts\levelClearedGO.png">
+      <Link>Content\Sprites\Fonts\SpriteFonts\levelClearedGO.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Global\AchievementOkButton.png">
+      <Link>Content\Sprites\Global\AchievementOkButton.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Global\AchievementShareButton.png">
+      <Link>Content\Sprites\Global\AchievementShareButton.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Global\AchivementUnlockedBaseShield.png">
+      <Link>Content\Sprites\Global\AchivementUnlockedBaseShield.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Global\AchivementUnlockedHamsta.png">
+      <Link>Content\Sprites\Global\AchivementUnlockedHamsta.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Global\HamstaBlink.png">
+      <Link>Content\Sprites\Global\HamstaBlink.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Global\Loading.png">
+      <Link>Content\Sprites\Global\Loading.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Global\MainTitle.png">
+      <Link>Content\Sprites\Global\MainTitle.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\BackToGameButton.png">
+      <Link>Content\Sprites\InGame\BackToGameButton.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\Block1.png">
+      <Link>Content\Sprites\InGame\Block1.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\Block1Blink.png">
+      <Link>Content\Sprites\InGame\Block1Blink.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\Block2.png">
+      <Link>Content\Sprites\InGame\Block2.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\Block2Blink.png">
+      <Link>Content\Sprites\InGame\Block2Blink.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\Block3.png">
+      <Link>Content\Sprites\InGame\Block3.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\Block3Blink.png">
+      <Link>Content\Sprites\InGame\Block3Blink.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\Block4.png">
+      <Link>Content\Sprites\InGame\Block4.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\Block4Blink.png">
+      <Link>Content\Sprites\InGame\Block4Blink.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\Block5.png">
+      <Link>Content\Sprites\InGame\Block5.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\Block5Blink.png">
+      <Link>Content\Sprites\InGame\Block5Blink.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\BombAccessory.png">
+      <Link>Content\Sprites\InGame\BombAccessory.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\BombAnimationFrame01.png">
+      <Link>Content\Sprites\InGame\BombAnimationFrame01.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\BombAnimationFrame02.png">
+      <Link>Content\Sprites\InGame\BombAnimationFrame02.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\BombAnimationFrame03.png">
+      <Link>Content\Sprites\InGame\BombAnimationFrame03.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\BombAnimationFrame04.png">
+      <Link>Content\Sprites\InGame\BombAnimationFrame04.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\BombAnimationFrame05.png">
+      <Link>Content\Sprites\InGame\BombAnimationFrame05.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\BombAnimationFrame06.png">
+      <Link>Content\Sprites\InGame\BombAnimationFrame06.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\BombAnimationFrame07.png">
+      <Link>Content\Sprites\InGame\BombAnimationFrame07.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\BombAnimationFrame08.png">
+      <Link>Content\Sprites\InGame\BombAnimationFrame08.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\BombAnimationFrame09.png">
+      <Link>Content\Sprites\InGame\BombAnimationFrame09.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\BombAnimationFrame10.png">
+      <Link>Content\Sprites\InGame\BombAnimationFrame10.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\BombAnimationFrame11.png">
+      <Link>Content\Sprites\InGame\BombAnimationFrame11.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\BombAnimationFrame12.png">
+      <Link>Content\Sprites\InGame\BombAnimationFrame12.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\BombAnimationFrame13.png">
+      <Link>Content\Sprites\InGame\BombAnimationFrame13.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\BombAnimationFrame14.png">
+      <Link>Content\Sprites\InGame\BombAnimationFrame14.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\GameOverQuit.png">
+      <Link>Content\Sprites\InGame\GameOverQuit.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\GameOverRetry.png">
+      <Link>Content\Sprites\InGame\GameOverRetry.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\GameOverTitle.png">
+      <Link>Content\Sprites\InGame\GameOverTitle.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\GamePausedTitle.png">
+      <Link>Content\Sprites\InGame\GamePausedTitle.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\GokuAccessory.png">
+      <Link>Content\Sprites\InGame\GokuAccessory.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\GokuAnimationFrame01.png">
+      <Link>Content\Sprites\InGame\GokuAnimationFrame01.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\GokuAnimationFrame02.png">
+      <Link>Content\Sprites\InGame\GokuAnimationFrame02.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\GokuAnimationFrame03.png">
+      <Link>Content\Sprites\InGame\GokuAnimationFrame03.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\GokuAnimationFrame04.png">
+      <Link>Content\Sprites\InGame\GokuAnimationFrame04.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\GokuAnimationFrame05.png">
+      <Link>Content\Sprites\InGame\GokuAnimationFrame05.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\GokuAnimationFrame06.png">
+      <Link>Content\Sprites\InGame\GokuAnimationFrame06.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\GokuAnimationFrame07.png">
+      <Link>Content\Sprites\InGame\GokuAnimationFrame07.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\GokuAnimationFrame08.png">
+      <Link>Content\Sprites\InGame\GokuAnimationFrame08.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\GokuAnimationFrame09.png">
+      <Link>Content\Sprites\InGame\GokuAnimationFrame09.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\GokuAnimationFrame10.png">
+      <Link>Content\Sprites\InGame\GokuAnimationFrame10.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\GokuAnimationFrame11.png">
+      <Link>Content\Sprites\InGame\GokuAnimationFrame11.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\GokuAnimationFrame12.png">
+      <Link>Content\Sprites\InGame\GokuAnimationFrame12.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\GokuAnimationFrame13.png">
+      <Link>Content\Sprites\InGame\GokuAnimationFrame13.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\GokuAnimationFrame14.png">
+      <Link>Content\Sprites\InGame\GokuAnimationFrame14.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\GokuAnimationFrame15.png">
+      <Link>Content\Sprites\InGame\GokuAnimationFrame15.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\GokuAnimationFrame16.png">
+      <Link>Content\Sprites\InGame\GokuAnimationFrame16.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\GoldenBlock.png">
+      <Link>Content\Sprites\InGame\GoldenBlock.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\GoldenBlockSparkle.png">
+      <Link>Content\Sprites\InGame\GoldenBlockSparkle.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\MagicBombAccessory.png">
+      <Link>Content\Sprites\InGame\MagicBombAccessory.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\MainMenuBG.png">
+      <Link>Content\Sprites\InGame\MainMenuBG.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\NewHighscore.png">
+      <Link>Content\Sprites\InGame\NewHighscore.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\PauseNormal.png">
+      <Link>Content\Sprites\InGame\PauseNormal.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\QuittingButton.png">
+      <Link>Content\Sprites\InGame\QuittingButton.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\RainbowHamsta.png">
+      <Link>Content\Sprites\InGame\RainbowHamsta.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\RainbowHamstaBlink.png">
+      <Link>Content\Sprites\InGame\RainbowHamstaBlink.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\RainbowRing.png">
+      <Link>Content\Sprites\InGame\RainbowRing.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\Share.png">
+      <Link>Content\Sprites\InGame\Share.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\SoloEyes.png">
+      <Link>Content\Sprites\InGame\SoloEyes.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\SoundOffNormal.png">
+      <Link>Content\Sprites\InGame\SoundOffNormal.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\SoundOnNormal.png">
+      <Link>Content\Sprites\InGame\SoundOnNormal.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\SubmitScore.png">
+      <Link>Content\Sprites\InGame\SubmitScore.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\TimeBack.png">
+      <Link>Content\Sprites\InGame\TimeBack.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\TimeUpTitle.png">
+      <Link>Content\Sprites\InGame\TimeUpTitle.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\TryAgain.png">
+      <Link>Content\Sprites\InGame\TryAgain.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\TutorialButton.png">
+      <Link>Content\Sprites\InGame\TutorialButton.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\UnmovableBlock.png">
+      <Link>Content\Sprites\InGame\UnmovableBlock.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\UnmovableBlockBlink.png">
+      <Link>Content\Sprites\InGame\UnmovableBlockBlink.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\InGame\YouScored.png">
+      <Link>Content\Sprites\InGame\YouScored.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Intro\Intro1.png">
+      <Link>Content\Sprites\Intro\Intro1.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Intro\Intro10.png">
+      <Link>Content\Sprites\Intro\Intro10.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Intro\Intro11.png">
+      <Link>Content\Sprites\Intro\Intro11.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Intro\Intro12.png">
+      <Link>Content\Sprites\Intro\Intro12.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Intro\Intro2.png">
+      <Link>Content\Sprites\Intro\Intro2.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Intro\Intro3.png">
+      <Link>Content\Sprites\Intro\Intro3.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Intro\Intro4.png">
+      <Link>Content\Sprites\Intro\Intro4.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Intro\Intro5.png">
+      <Link>Content\Sprites\Intro\Intro5.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Intro\Intro6.png">
+      <Link>Content\Sprites\Intro\Intro6.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Intro\Intro7.png">
+      <Link>Content\Sprites\Intro\Intro7.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Intro\Intro8.png">
+      <Link>Content\Sprites\Intro\Intro8.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Intro\Intro9.png">
+      <Link>Content\Sprites\Intro\Intro9.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\AboutButton.png">
+      <Link>Content\Sprites\MainMenu1\AboutButton.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\AboutMenuBG.png">
+      <Link>Content\Sprites\MainMenu1\AboutMenuBG.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\AchievementsNormal.png">
+      <Link>Content\Sprites\MainMenu1\AchievementsNormal.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\AchievementsTitle.png">
+      <Link>Content\Sprites\MainMenu1\AchievementsTitle.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\AchivementLocked.png">
+      <Link>Content\Sprites\MainMenu1\AchivementLocked.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\AchivementUnlocked.png">
+      <Link>Content\Sprites\MainMenu1\AchivementUnlocked.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\ClassicModeBigButton.png">
+      <Link>Content\Sprites\MainMenu1\ClassicModeBigButton.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\ClassicModeTitle.png">
+      <Link>Content\Sprites\MainMenu1\ClassicModeTitle.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\ClassicTitle.png">
+      <Link>Content\Sprites\MainMenu1\ClassicTitle.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\ContinueGameButton.png">
+      <Link>Content\Sprites\MainMenu1\ContinueGameButton.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\ContinueGameButtonDisabled.png">
+      <Link>Content\Sprites\MainMenu1\ContinueGameButtonDisabled.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\CountdownModeBigButton.png">
+      <Link>Content\Sprites\MainMenu1\CountdownModeBigButton.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\CountdownModeBigButtonDisabled.png">
+      <Link>Content\Sprites\MainMenu1\CountdownModeBigButtonDisabled.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\CountdownModeTitle.png">
+      <Link>Content\Sprites\MainMenu1\CountdownModeTitle.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\CountdownTitle.png">
+      <Link>Content\Sprites\MainMenu1\CountdownTitle.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\DroppinModeBigButton.png">
+      <Link>Content\Sprites\MainMenu1\DroppinModeBigButton.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\DroppinModeBigButtonDisabled.png">
+      <Link>Content\Sprites\MainMenu1\DroppinModeBigButtonDisabled.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\DroppinModeTitle.png">
+      <Link>Content\Sprites\MainMenu1\DroppinModeTitle.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\DroppinTitle.png">
+      <Link>Content\Sprites\MainMenu1\DroppinTitle.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\MainMenuBG.png">
+      <Link>Content\Sprites\MainMenu1\MainMenuBG.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\MainMenuLeaderboardButton.png">
+      <Link>Content\Sprites\MainMenu1\MainMenuLeaderboardButton.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\MainMenuTutorial.png">
+      <Link>Content\Sprites\MainMenu1\MainMenuTutorial.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\NewGameButton.png">
+      <Link>Content\Sprites\MainMenu1\NewGameButton.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\OptionsButton.png">
+      <Link>Content\Sprites\MainMenu1\OptionsButton.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\OptionsMusicOff.png">
+      <Link>Content\Sprites\MainMenu1\OptionsMusicOff.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\OptionsMusicOn.png">
+      <Link>Content\Sprites\MainMenu1\OptionsMusicOn.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\OptionsNameField.png">
+      <Link>Content\Sprites\MainMenu1\OptionsNameField.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\OptionsSoundFXOff.png">
+      <Link>Content\Sprites\MainMenu1\OptionsSoundFXOff.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\OptionsSoundFXOn.png">
+      <Link>Content\Sprites\MainMenu1\OptionsSoundFXOn.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\OptionsTextPlaceholder.png">
+      <Link>Content\Sprites\MainMenu1\OptionsTextPlaceholder.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\OptionsTitle.png">
+      <Link>Content\Sprites\MainMenu1\OptionsTitle.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\OptionsVibrationOff.png">
+      <Link>Content\Sprites\MainMenu1\OptionsVibrationOff.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\OptionsVibrationOn.png">
+      <Link>Content\Sprites\MainMenu1\OptionsVibrationOn.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\ProfileTitle.png">
+      <Link>Content\Sprites\MainMenu1\ProfileTitle.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\RatingButton.png">
+      <Link>Content\Sprites\MainMenu1\RatingButton.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\RelaxModeBigButton.png">
+      <Link>Content\Sprites\MainMenu1\RelaxModeBigButton.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\RelaxModeBigButtonDisabled.png">
+      <Link>Content\Sprites\MainMenu1\RelaxModeBigButtonDisabled.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\RelaxTitle.png">
+      <Link>Content\Sprites\MainMenu1\RelaxTitle.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\SelectedModeButtonFrame.png">
+      <Link>Content\Sprites\MainMenu1\SelectedModeButtonFrame.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\TimeBack.png">
+      <Link>Content\Sprites\MainMenu1\TimeBack.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\TrophyBronze.png">
+      <Link>Content\Sprites\MainMenu1\TrophyBronze.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\TrophyGold.png">
+      <Link>Content\Sprites\MainMenu1\TrophyGold.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu1\TrophySilver.png">
+      <Link>Content\Sprites\MainMenu1\TrophySilver.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu2\AchievementsBackground.png">
+      <Link>Content\Sprites\MainMenu2\AchievementsBackground.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu2\AchievementsOverLayer.png">
+      <Link>Content\Sprites\MainMenu2\AchievementsOverLayer.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu2\GameOptionsBackground.png">
+      <Link>Content\Sprites\MainMenu2\GameOptionsBackground.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu2\LeaderboardBackground.png">
+      <Link>Content\Sprites\MainMenu2\LeaderboardBackground.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu2\LeaderboardOverLayer.png">
+      <Link>Content\Sprites\MainMenu2\LeaderboardOverLayer.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\MainMenu2\ProfileOptionsBackground.png">
+      <Link>Content\Sprites\MainMenu2\ProfileOptionsBackground.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\SpriteSheets\FontsSpriteSheet.png">
+      <Link>Content\Sprites\SpriteSheets\FontsSpriteSheet.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\SpriteSheets\GlobalSpriteSheet.png">
+      <Link>Content\Sprites\SpriteSheets\GlobalSpriteSheet.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\SpriteSheets\InGameSpriteSheet.png">
+      <Link>Content\Sprites\SpriteSheets\InGameSpriteSheet.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\SpriteSheets\InGameSpriteSheetDXT.png">
+      <Link>Content\Sprites\SpriteSheets\InGameSpriteSheetDXT.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\SpriteSheets\IntroSpriteSheet.png">
+      <Link>Content\Sprites\SpriteSheets\IntroSpriteSheet.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\SpriteSheets\MainMenu1SpriteSheet.png">
+      <Link>Content\Sprites\SpriteSheets\MainMenu1SpriteSheet.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\SpriteSheets\MainMenu2SpriteSheet.png">
+      <Link>Content\Sprites\SpriteSheets\MainMenu2SpriteSheet.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\SpriteSheets\Tutorial1SpriteSheet.png">
+      <Link>Content\Sprites\SpriteSheets\Tutorial1SpriteSheet.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\SpriteSheets\Tutorial1SpriteSheetDXT.png">
+      <Link>Content\Sprites\SpriteSheets\Tutorial1SpriteSheetDXT.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Tutorial1\TutorialPage01.jpg">
+      <Link>Content\Sprites\Tutorial1\TutorialPage01.jpg</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Tutorial1\TutorialPage02.jpg">
+      <Link>Content\Sprites\Tutorial1\TutorialPage02.jpg</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Tutorial1\TutorialPage03.jpg">
+      <Link>Content\Sprites\Tutorial1\TutorialPage03.jpg</Link>
+    </BundleResource>
+    <BundleResource Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\Tutorial1\TutorialPage04.jpg">
+      <Link>Content\Sprites\Tutorial1\TutorialPage04.jpg</Link>
+    </BundleResource>
+    <BundleResource Include="Resources\Icon.png" />
+    <BundleResource Include="Resources\Default%402x.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\iOS.DS.GameLibrary\iOS.DS.GameLibrary.csproj">
+      <Project>{413546DC-AF1B-4AA2-8B5F-C788527ECA52}</Project>
+      <Name>iOS.DS.GameLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\iOS.3rdParty.MercuryParticleEngine\iOS.3rdParty.MercuryParticleEngine.csproj">
+      <Project>{C3048D9F-AE6D-4629-92CF-D2E37DFBF2D9}</Project>
+      <Name>iOS.3rdParty.MercuryParticleEngine</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\" />
+    <Folder Include="Sprites\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\SpriteSheets\FontsSpriteSheet.txt">
+      <Link>Content\Sprites\SpriteSheets\FontsSpriteSheet.txt</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\SpriteSheets\GlobalSpriteSheet.txt">
+      <Link>Content\Sprites\SpriteSheets\GlobalSpriteSheet.txt</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\SpriteSheets\InGameSpriteSheet.txt">
+      <Link>Content\Sprites\SpriteSheets\InGameSpriteSheet.txt</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\SpriteSheets\InGameSpriteSheetDXT.txt">
+      <Link>Content\Sprites\SpriteSheets\InGameSpriteSheetDXT.txt</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\SpriteSheets\IntroSpriteSheet.txt">
+      <Link>Content\Sprites\SpriteSheets\IntroSpriteSheet.txt</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\SpriteSheets\MainMenu1SpriteSheet.txt">
+      <Link>Content\Sprites\SpriteSheets\MainMenu1SpriteSheet.txt</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\SpriteSheets\MainMenu2SpriteSheet.txt">
+      <Link>Content\Sprites\SpriteSheets\MainMenu2SpriteSheet.txt</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\SpriteSheets\Tutorial1SpriteSheet.txt">
+      <Link>Content\Sprites\SpriteSheets\Tutorial1SpriteSheet.txt</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\Sprites\SpriteSheets\Tutorial1SpriteSheetDXT.txt">
+      <Link>Content\Sprites\SpriteSheets\Tutorial1SpriteSheetDXT.txt</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\SlideWhistleUp.wav">
+      <Link>Content\SlideWhistleUp.wav</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\AhAhAh.wav">
+      <Link>Content\AhAhAh.wav</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\AhAhAhAhAh.wav">
+      <Link>Content\AhAhAhAhAh.wav</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\Amazing.wav">
+      <Link>Content\Amazing.wav</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\Bomber.wav">
+      <Link>Content\Bomber.wav</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\BombHamstaExplosionSound.wav">
+      <Link>Content\BombHamstaExplosionSound.wav</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\ButtonReleaseSound.wav">
+      <Link>Content\ButtonReleaseSound.wav</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\ChickenHamstaSound.wav">
+      <Link>Content\ChickenHamstaSound.wav</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\ClassicModeBGMusic.mp3">
+      <Link>Content\ClassicModeBGMusic.mp3</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\Combo.wav">
+      <Link>Content\Combo.wav</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\CountdownModeBGMusic.mp3">
+      <Link>Content\CountdownModeBGMusic.mp3</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\DroppinModeBGMusic.mp3">
+      <Link>Content\DroppinModeBGMusic.mp3</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\EvilLaugh.wav">
+      <Link>Content\EvilLaugh.wav</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\Fantastic.wav">
+      <Link>Content\Fantastic.wav</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\GameOver.wav">
+      <Link>Content\GameOver.wav</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\GameOverJingle.wav">
+      <Link>Content\GameOverJingle.wav</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\Go.wav">
+      <Link>Content\Go.wav</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\GokuPower.wav">
+      <Link>Content\GokuPower.wav</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\GoldHamstaDropSound.wav">
+      <Link>Content\GoldHamstaDropSound.wav</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\HamstaDroppedSound.wav">
+      <Link>Content\HamstaDroppedSound.wav</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\HamstaMatchingSound1.wav">
+      <Link>Content\HamstaMatchingSound1.wav</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\HamstaMatchingSound2.wav">
+      <Link>Content\HamstaMatchingSound2.wav</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\HamstaMatchingSound3.wav">
+      <Link>Content\HamstaMatchingSound3.wav</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\HamstaMatchingSound4.wav">
+      <Link>Content\HamstaMatchingSound4.wav</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\HamstaSimpleExplosionSound.wav">
+      <Link>Content\HamstaSimpleExplosionSound.wav</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\HnK.wav">
+      <Link>Content\HnK.wav</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\HurryUp.wav">
+      <Link>Content\HurryUp.wav</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\KittyClearedSound.wav">
+      <Link>Content\KittyClearedSound.wav</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\KittyDroppedSound.wav">
+      <Link>Content\KittyDroppedSound.wav</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\Lasah.wav">
+      <Link>Content\Lasah.wav</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\MagicBomb.wav">
+      <Link>Content\MagicBomb.wav</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\MainMenuTheme.mp3">
+      <Link>Content\MainMenuTheme.mp3</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\MainMenuTitleDropSound.wav">
+      <Link>Content\MainMenuTitleDropSound.wav</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\NewPowerUpHamstaSound.wav">
+      <Link>Content\NewPowerUpHamstaSound.wav</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\OhhhLennyWizard.wav">
+      <Link>Content\OhhhLennyWizard.wav</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\OhNoBadKitty.wav">
+      <Link>Content\OhNoBadKitty.wav</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\OhOoohh.wav">
+      <Link>Content\OhOoohh.wav</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\SlideWhistleDown.wav">
+      <Link>Content\SlideWhistleDown.wav</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\Wooow.wav">
+      <Link>Content\Wooow.wav</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\Yeah.wav">
+      <Link>Content\Yeah.wav</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\FirstScreenMainMenuGameModesButtonsWoosh.wav">
+      <Link>Content\FirstScreenMainMenuGameModesButtonsWoosh.wav</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\DebugInfo.xnb">
+      <Link>Content\DebugInfo.xnb</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\AchievementEntryDescription.xnb">
+      <Link>Content\AchievementEntryDescription.xnb</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\AchievementEntryTitle.xnb">
+      <Link>Content\AchievementEntryTitle.xnb</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\AkaDylan32OutlinedSpriteFont.xnb">
+      <Link>Content\AkaDylan32OutlinedSpriteFont.xnb</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\BigAchievementEntryDescription.xnb">
+      <Link>Content\BigAchievementEntryDescription.xnb</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\BigAchievementEntryTitle.xnb">
+      <Link>Content\BigAchievementEntryTitle.xnb</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\InGamePointsLetters.xnb">
+      <Link>Content\InGamePointsLetters.xnb</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\IntroLetters.xnb">
+      <Link>Content\IntroLetters.xnb</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\LeaderboardsDescription.xnb">
+      <Link>Content\LeaderboardsDescription.xnb</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\LeaderboardsRank.xnb">
+      <Link>Content\LeaderboardsRank.xnb</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\LeaderboardsTitle.xnb">
+      <Link>Content\LeaderboardsTitle.xnb</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\ScoreloopUsername.xnb">
+      <Link>Content\ScoreloopUsername.xnb</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\StatsCurrentLevelLetters.xnb">
+      <Link>Content\StatsCurrentLevelLetters.xnb</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\StatsProgressBarLetters.xnb">
+      <Link>Content\StatsProgressBarLetters.xnb</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\StatsScoreBigLetters.xnb">
+      <Link>Content\StatsScoreBigLetters.xnb</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\StatsScoreNormalLetters.xnb">
+      <Link>Content\StatsScoreNormalLetters.xnb</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\Ready.wav">
+      <Link>Content\Ready.wav</Link>
+    </Content>
+    <Content Include="..\Android.DS.HamstasKitties\Assets\Content\LastSecondsCountdownModeSound.wav">
+      <Link>Content\LastSecondsCountdownModeSound.wav</Link>
+    </Content>
+  </ItemGroup>
+</Project>

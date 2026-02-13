@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C3048D9F-AE6D-4629-92CF-D2E37DFBF2D9}</ProjectGuid>
+    <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>iOS.3rdParty.MercuryParticleEngine</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>iOS.3rdParty.MercuryParticleEngine</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Assemblies\iOS</OutputPath>
+    <DefineConstants>DEBUG;MONO</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Assemblies\iOS</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <DefineConstants>MONO</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="monotouch" />
+    <Reference Include="mscorlib" />
+    <Reference Include="OpenTK" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="MonoGame.Framework">
+      <HintPath>..\Assemblies\iOS\MonoGame.Framework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="..\Android.3rdParty.MercuryParticleEngine\Controllers\" />
+    <Folder Include="..\Android.3rdParty.MercuryParticleEngine\Emitters\" />
+    <Folder Include="..\Android.3rdParty.MercuryParticleEngine\Modifiers\" />
+    <Folder Include="..\Android.3rdParty.MercuryParticleEngine\Renderers\" />
+    <Folder Include="..\Android.3rdParty.MercuryParticleEngine\Threading\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Controllers\Controller.cs">
+      <Link>Controllers\Controller.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Controllers\ControllerCollection.cs">
+      <Link>Controllers\ControllerCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Controllers\TimelineController.cs">
+      <Link>Controllers\TimelineController.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Controllers\TriggerQueueController.cs">
+      <Link>Controllers\TriggerQueueController.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Emitters\CircleEmitter.cs">
+      <Link>Emitters\CircleEmitter.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Emitters\ConeEmitter.cs">
+      <Link>Emitters\ConeEmitter.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Emitters\Emitter.cs">
+      <Link>Emitters\Emitter.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Emitters\EmitterBlendMode.cs">
+      <Link>Emitters\EmitterBlendMode.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Emitters\EmitterCollection.cs">
+      <Link>Emitters\EmitterCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Emitters\EmitterCompatibilityExtensions.cs">
+      <Link>Emitters\EmitterCompatibilityExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Emitters\LineEmitter.cs">
+      <Link>Emitters\LineEmitter.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Emitters\MaskEmitter.cs">
+      <Link>Emitters\MaskEmitter.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Emitters\PolygonEmitter.cs">
+      <Link>Emitters\PolygonEmitter.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Emitters\RectEmitter.cs">
+      <Link>Emitters\RectEmitter.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Emitters\TextureEmitter.cs">
+      <Link>Emitters\TextureEmitter.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Modifiers\BoundingRectModifier.cs">
+      <Link>Modifiers\BoundingRectModifier.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Modifiers\ColourInterpolatorModifier.cs">
+      <Link>Modifiers\ColourInterpolatorModifier.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Modifiers\ColourMergeModifier.cs">
+      <Link>Modifiers\ColourMergeModifier.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Modifiers\ColourModifier.cs">
+      <Link>Modifiers\ColourModifier.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Modifiers\DampingModifier.cs">
+      <Link>Modifiers\DampingModifier.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Modifiers\ForceInterpolatorModifier.cs">
+      <Link>Modifiers\ForceInterpolatorModifier.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Modifiers\HueShiftModifier.cs">
+      <Link>Modifiers\HueShiftModifier.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Modifiers\LinearGravityModifier.cs">
+      <Link>Modifiers\LinearGravityModifier.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Modifiers\Modifier.cs">
+      <Link>Modifiers\Modifier.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Modifiers\ModifierCollection.cs">
+      <Link>Modifiers\ModifierCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Modifiers\OpacityFastFadeModifier.cs">
+      <Link>Modifiers\OpacityFastFadeModifier.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Modifiers\OpacityInterpolatorModifier.cs">
+      <Link>Modifiers\OpacityInterpolatorModifier.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Modifiers\OpacityModifier.cs">
+      <Link>Modifiers\OpacityModifier.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Modifiers\OpacityOscillator.cs">
+      <Link>Modifiers\OpacityOscillator.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Modifiers\PlatformModifier.cs">
+      <Link>Modifiers\PlatformModifier.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Modifiers\RadialForceModifier.cs">
+      <Link>Modifiers\RadialForceModifier.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Modifiers\RadialGravityModifier.cs">
+      <Link>Modifiers\RadialGravityModifier.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Modifiers\RectangleConstraintDeflector.cs">
+      <Link>Modifiers\RectangleConstraintDeflector.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Modifiers\RectangleForceModifier.cs">
+      <Link>Modifiers\RectangleForceModifier.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Modifiers\RotationModifier.cs">
+      <Link>Modifiers\RotationModifier.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Modifiers\RotationRateModifier.cs">
+      <Link>Modifiers\RotationRateModifier.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Modifiers\ScaleInterpolatorModifier.cs">
+      <Link>Modifiers\ScaleInterpolatorModifier.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Modifiers\ScaleMergeModifier.cs">
+      <Link>Modifiers\ScaleMergeModifier.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Modifiers\ScaleModifier.cs">
+      <Link>Modifiers\ScaleModifier.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Modifiers\ScaleOscillator.cs">
+      <Link>Modifiers\ScaleOscillator.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Modifiers\SineForceModifier.cs">
+      <Link>Modifiers\SineForceModifier.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Modifiers\TrajectoryRotationModifier.cs">
+      <Link>Modifiers\TrajectoryRotationModifier.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Modifiers\VelocityClampModifier.cs">
+      <Link>Modifiers\VelocityClampModifier.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Renderers\Renderer.cs">
+      <Link>Renderers\Renderer.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Renderers\SpriteBatchRenderer.cs">
+      <Link>Renderers\SpriteBatchRenderer.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Threading\Parallel.cs">
+      <Link>Threading\Parallel.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\AsyncUpdateManager.cs">
+      <Link>AsyncUpdateManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\BoundingRect.cs">
+      <Link>BoundingRect.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Calculator.cs">
+      <Link>Calculator.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Guard.cs">
+      <Link>Guard.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\ParticleEffect.cs">
+      <Link>ParticleEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\ParticleEffectManager.cs">
+      <Link>ParticleEffectManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\RandomHelper.cs">
+      <Link>RandomHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Range.cs">
+      <Link>Range.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\VariableFloat.cs">
+      <Link>VariableFloat.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\VariableFloat3.cs">
+      <Link>VariableFloat3.cs</Link>
+    </Compile>
+    <Compile Include="..\Android.3rdParty.MercuryParticleEngine\Particle.cs">
+      <Link>Particle.cs</Link>
+    </Compile>
+  </ItemGroup>
+</Project>

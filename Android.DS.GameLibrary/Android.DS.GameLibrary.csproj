@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{58E53849-EC04-4A94-A0CC-0352E52DC990}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Android.DS.GameLibrary</RootNamespace>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AssemblyName>Android.DS.GameLibrary</AssemblyName>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Assemblies\Android</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Assemblies\Android</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="OpenTK" />
+    <Reference Include="Lidgren.Network">
+      <HintPath>..\Assemblies\Android\Lidgren.Network.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoGame.Framework">
+      <HintPath>..\Assemblies\Android\MonoGame.Framework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Advertising\CustomFallbackAdGameComponent.cs" />
+    <Compile Include="Advertising\MicrosoftAdsManager.cs" />
+    <Compile Include="Analytics\Flurry\FlurryAnalyticsService.cs" />
+    <Compile Include="Analytics\IAnalyticsService.cs" />
+    <Compile Include="Animation\Tween\Back.cs" />
+    <Compile Include="Animation\Tween\Bounce.cs" />
+    <Compile Include="Animation\Tween\Circular.cs" />
+    <Compile Include="Animation\Tween\Cubic.cs" />
+    <Compile Include="Animation\Tween\Elastic.cs" />
+    <Compile Include="Animation\Tween\Exponential.cs" />
+    <Compile Include="Animation\Tween\Linear.cs" />
+    <Compile Include="Animation\Tween\Quadratic.cs" />
+    <Compile Include="Animation\Tween\Quartic.cs" />
+    <Compile Include="Animation\Tween\Quintic.cs" />
+    <Compile Include="Animation\Tween\Sinusoidal.cs" />
+    <Compile Include="Animation\Tween\Tweener.cs" />
+    <Compile Include="Animation\AnimatedLayerObject.cs" />
+    <Compile Include="Animation\DirectorTransition.cs" />
+    <Compile Include="Animation\FadeDirectorTransition.cs" />
+    <Compile Include="Animation\FrameBasedAnimatedLayerObject.cs" />
+    <Compile Include="Animation\MaskSwipeDirectorTransition.cs" />
+    <Compile Include="Animation\Timer.cs" />
+    <Compile Include="Animation\TimerCollection.cs" />
+    <Compile Include="Animation\TweenerCollection.cs" />
+    <Compile Include="Camera\Camera2D.cs" />
+    <Compile Include="Core\AccelerometerManager.cs" />
+    <Compile Include="Core\ApplicationLifeCycleManager.cs" />
+    <Compile Include="Core\DeviceInfo.cs" />
+    <Compile Include="Core\Director.cs" />
+    <Compile Include="Core\IManager.cs" />
+    <Compile Include="Core\NetworkManager.cs" />
+    <Compile Include="Core\PrimitiveBatch.cs" />
+    <Compile Include="Core\ResourcesManager.cs" />
+    <Compile Include="Core\SettingsManager.cs" />
+    <Compile Include="Core\SoundManager.cs" />
+    <Compile Include="Core\VibratorManager.cs" />
+    <Compile Include="Entity\Player.cs" />
+    <Compile Include="Extensions\Extensions.cs" />
+    <Compile Include="Interaction\ITouchableContainer.cs" />
+    <Compile Include="Interaction\TouchPanelManager.cs" />
+    <Compile Include="Logic\LevelLogic.cs" />
+    <Compile Include="Logic\Spline.cs" />
+    <Compile Include="Logic\SplinePoint.cs" />
+    <Compile Include="Logic\TileInfo.cs" />
+    <Compile Include="Persistence\Serializers\AbstractSerializer.cs" />
+    <Compile Include="Persistence\Serializers\DataContractSerializer.cs" />
+    <Compile Include="Persistence\IApplicationActivationAware.cs" />
+    <Compile Include="Persistence\IApplicationDeactivationAware.cs" />
+    <Compile Include="Social\Achievements\Achievement.cs" />
+    <Compile Include="Social\Achievements\AchievementData.cs" />
+    <Compile Include="Social\Achievements\AchievementsManager.cs" />
+    <Compile Include="Social\Gaming\Score.cs" />
+    <Compile Include="Social\Gaming\ScoreloopService.cs" />
+    <Compile Include="UI\BitmapText.cs" />
+    <Compile Include="UI\Button.cs" />
+    <Compile Include="UI\ITouchable.cs" />
+    <Compile Include="UI\IUpdateable.cs" />
+    <Compile Include="UI\Layer.cs" />
+    <Compile Include="UI\LayerGroup.cs" />
+    <Compile Include="UI\LayerObject.cs" />
+    <Compile Include="UI\LeaderboardItem.cs" />
+    <Compile Include="UI\ListView.cs" />
+    <Compile Include="UI\ListViewItem.cs" />
+    <Compile Include="UI\PageableLayer.cs" />
+    <Compile Include="UI\PushButton.cs" />
+    <Compile Include="UI\Scene.cs" />
+    <Compile Include="UI\SelectableButton.cs" />
+    <Compile Include="UI\SimpleTextureButton.cs" />
+    <Compile Include="UI\SlideCheckbox.cs" />
+    <Compile Include="UI\Text.cs" />
+    <Compile Include="UI\Texture.cs" />
+    <Compile Include="Utils\DebugInfo.cs" />
+    <Compile Include="Utils\DeviceStatus.cs" />
+    <Compile Include="Utils\GuideHelper.cs" />
+    <Compile Include="Utils\Logger.cs" />
+    <Compile Include="Utils\PhysicsTools.cs" />
+    <Compile Include="Utils\Rand.cs" />
+    <Compile Include="Utils\TasksUtils.cs" />
+    <Compile Include="Core\ScreenResolutionManager.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\Android.3rdParty.MercuryParticleEngine\Android.3rdParty.MercuryParticleEngine.csproj">
+      <Project>{F3618F71-E2AB-4B9E-AFF5-C63EECE0100D}</Project>
+      <Name>Android.3rdParty.MercuryParticleEngine</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

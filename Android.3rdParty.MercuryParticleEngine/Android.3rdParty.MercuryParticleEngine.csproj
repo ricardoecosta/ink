@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F3618F71-E2AB-4B9E-AFF5-C63EECE0100D}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Android.3rdParty.MercuryParticleEngine</RootNamespace>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AssemblyName>Android.3rdParty.MercuryParticleEngine</AssemblyName>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Assemblies\Android</OutputPath>
+    <DefineConstants>DEBUG;MONO</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AndroidLinkMode>None</AndroidLinkMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Assemblies\Android</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <DefineConstants>MONO</DefineConstants>
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="mscorlib" />
+    <Reference Include="OpenTK" />
+    <Reference Include="MonoGame.Framework">
+      <HintPath>..\Assemblies\Android\MonoGame.Framework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AsyncUpdateManager.cs" />
+    <Compile Include="BoundingRect.cs" />
+    <Compile Include="Calculator.cs" />
+    <Compile Include="Guard.cs" />
+    <Compile Include="ParticleEffect.cs" />
+    <Compile Include="ParticleEffectManager.cs" />
+    <Compile Include="RandomHelper.cs" />
+    <Compile Include="Range.cs" />
+    <Compile Include="VariableFloat.cs" />
+    <Compile Include="VariableFloat3.cs" />
+    <Compile Include="Controllers\Controller.cs" />
+    <Compile Include="Controllers\ControllerCollection.cs" />
+    <Compile Include="Controllers\TimelineController.cs" />
+    <Compile Include="Controllers\TriggerQueueController.cs" />
+    <Compile Include="Emitters\CircleEmitter.cs" />
+    <Compile Include="Emitters\ConeEmitter.cs" />
+    <Compile Include="Emitters\Emitter.cs" />
+    <Compile Include="Emitters\EmitterBlendMode.cs" />
+    <Compile Include="Emitters\EmitterCollection.cs" />
+    <Compile Include="Emitters\EmitterCompatibilityExtensions.cs" />
+    <Compile Include="Emitters\LineEmitter.cs" />
+    <Compile Include="Emitters\MaskEmitter.cs" />
+    <Compile Include="Emitters\PolygonEmitter.cs" />
+    <Compile Include="Emitters\RectEmitter.cs" />
+    <Compile Include="Emitters\TextureEmitter.cs" />
+    <Compile Include="Modifiers\BoundingRectModifier.cs" />
+    <Compile Include="Modifiers\ColourInterpolatorModifier.cs" />
+    <Compile Include="Modifiers\ColourMergeModifier.cs" />
+    <Compile Include="Modifiers\ColourModifier.cs" />
+    <Compile Include="Modifiers\DampingModifier.cs" />
+    <Compile Include="Modifiers\ForceInterpolatorModifier.cs" />
+    <Compile Include="Modifiers\HueShiftModifier.cs" />
+    <Compile Include="Modifiers\LinearGravityModifier.cs" />
+    <Compile Include="Modifiers\Modifier.cs" />
+    <Compile Include="Modifiers\ModifierCollection.cs" />
+    <Compile Include="Modifiers\OpacityFastFadeModifier.cs" />
+    <Compile Include="Modifiers\OpacityInterpolatorModifier.cs" />
+    <Compile Include="Modifiers\OpacityModifier.cs" />
+    <Compile Include="Modifiers\OpacityOscillator.cs" />
+    <Compile Include="Modifiers\PlatformModifier.cs" />
+    <Compile Include="Modifiers\RadialForceModifier.cs" />
+    <Compile Include="Modifiers\RadialGravityModifier.cs" />
+    <Compile Include="Modifiers\RectangleConstraintDeflector.cs" />
+    <Compile Include="Modifiers\RectangleForceModifier.cs" />
+    <Compile Include="Modifiers\RotationModifier.cs" />
+    <Compile Include="Modifiers\RotationRateModifier.cs" />
+    <Compile Include="Modifiers\ScaleInterpolatorModifier.cs" />
+    <Compile Include="Modifiers\ScaleMergeModifier.cs" />
+    <Compile Include="Modifiers\ScaleModifier.cs" />
+    <Compile Include="Modifiers\ScaleOscillator.cs" />
+    <Compile Include="Modifiers\SineForceModifier.cs" />
+    <Compile Include="Modifiers\TrajectoryRotationModifier.cs" />
+    <Compile Include="Modifiers\VelocityClampModifier.cs" />
+    <Compile Include="Renderers\Renderer.cs" />
+    <Compile Include="Renderers\SpriteBatchRenderer.cs" />
+    <Compile Include="Threading\Parallel.cs" />
+    <Compile Include="Particle.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <ItemGroup>
+    <None Include="Properties\AndroidManifest.xml" />
+  </ItemGroup>
+</Project>

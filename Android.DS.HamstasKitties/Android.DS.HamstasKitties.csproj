@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B818AA4A-74E5-45D3-ABB0-B0F154867CD2}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Android.DS.HamstasKitties</RootNamespace>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AssemblyName>Android.DS.HamstasKitties</AssemblyName>
+    <TargetFrameworkVersion>v2.3</TargetFrameworkVersion>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;ANDROID</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <DefineConstants>ANDROID</DefineConstants>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <AndroidSupportedAbis>armeabi-v7a,x86</AndroidSupportedAbis>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="mscorlib" />
+    <Reference Include="OpenTK" />
+    <Reference Include="Lidgren.Network">
+      <HintPath>..\Assemblies\Android\Lidgren.Network.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoGame.Framework">
+      <HintPath>..\Assemblies\Android\MonoGame.Framework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="Achievements\ComboAchievement.cs" />
+    <Compile Include="Achievements\GameModeAchievement.cs" />
+    <Compile Include="Achievements\ItemsCreatedAchievement.cs" />
+    <Compile Include="Achievements\ItemsRemovalAchievement.cs" />
+    <Compile Include="Achievements\LevelAchievement.cs" />
+    <Compile Include="Achievements\ScoreAchievement.cs" />
+    <Compile Include="Achievements\ScreenClearedAchievement.cs" />
+    <Compile Include="Achievements\UnlockedSpecialTypeAchievement.cs" />
+    <Compile Include="Constants\AnalyticsConstants.cs" />
+    <Compile Include="Constants\GlobalConstants.cs" />
+    <Compile Include="Constants\PersistableSettingsConstants.cs" />
+    <Compile Include="Constants\ScoreConstants.cs" />
+    <Compile Include="Constants\ScoreloopConstants.cs" />
+    <Compile Include="Constants\UILayoutConstants.cs" />
+    <Compile Include="Extras\SoundPushButton.cs" />
+    <Compile Include="Layers\AchievementMenuContentLayer.cs" />
+    <Compile Include="Layers\AchievementPopupBGLayer.cs" />
+    <Compile Include="Layers\AchievementPopupButtonsLayer.cs" />
+    <Compile Include="Layers\AchievementsMenuContentTitleLayer.cs" />
+    <Compile Include="Layers\AchievementsMenuOverLayer.cs" />
+    <Compile Include="Layers\HUDLayer.cs" />
+    <Compile Include="Layers\LeadersboardMenuContentLayer.cs" />
+    <Compile Include="Layers\LeadersboardMenuContentTitleLayer.cs" />
+    <Compile Include="Layers\LeadersboardMenuOverLayer.cs" />
+    <Compile Include="Layers\LevelBackgroundPanelLayer.cs" />
+    <Compile Include="Layers\LevelBlocksPanelLayer.cs" />
+    <Compile Include="Layers\LevelGameOverMenuLayer.cs" />
+    <Compile Include="Layers\LevelPauseMenuLayer.cs" />
+    <Compile Include="Layers\MainMenuBackgroundPanelLayer.cs" />
+    <Compile Include="Layers\MainMenuGameModesButtonsLayer.cs" />
+    <Compile Include="Layers\MainMenuOptionsButtonsLayer.cs" />
+    <Compile Include="Layers\MainMenuTitleLayer.cs" />
+    <Compile Include="Layers\NewGameMenuButtonsLayer.cs" />
+    <Compile Include="Layers\OptionsMenuContentLayer.cs" />
+    <Compile Include="Layers\TimeRemainingLayer.cs" />
+    <Compile Include="Layers\TutorialContentLayer.cs" />
+    <Compile Include="Management\BestScoresManager.cs" />
+    <Compile Include="Management\GameDirector.cs" />
+    <Compile Include="Management\GameStateManager.cs" />
+    <Compile Include="Mechanics\Emitters\BlockEmitter.cs" />
+    <Compile Include="Mechanics\Emitters\ChilloutModeBlockEmitter.cs" />
+    <Compile Include="Mechanics\Emitters\ClassicModeBlockEmitter.cs" />
+    <Compile Include="Mechanics\Emitters\CountdownModeBlockEmitter.cs" />
+    <Compile Include="Mechanics\Emitters\GoldRushModeBlockEmitter.cs" />
+    <Compile Include="Mechanics\Block.cs" />
+    <Compile Include="Mechanics\BlocksMiniPhysicsEngine.cs" />
+    <Compile Include="Mechanics\ComboManager.cs" />
+    <Compile Include="Mechanics\LevelBoardController.cs" />
+    <Compile Include="Mechanics\MatchingGroup.cs" />
+    <Compile Include="Mechanics\QueuedLevelAnimation.cs" />
+    <Compile Include="Persistence\BestScore.cs" />
+    <Compile Include="Persistence\BlockState.cs" />
+    <Compile Include="Persistence\BoardState.cs" />
+    <Compile Include="Persistence\GameModeState.cs" />
+    <Compile Include="Persistence\GameState.cs" />
+    <Compile Include="Scenes\GameModes\ChilloutMode.cs" />
+    <Compile Include="Scenes\GameModes\ClassicMode.cs" />
+    <Compile Include="Scenes\GameModes\CountdownMode.cs" />
+    <Compile Include="Scenes\GameModes\GoldRushMode.cs" />
+    <Compile Include="Scenes\GameModes\Level.cs" />
+    <Compile Include="Scenes\Menus\AboutMenu.cs" />
+    <Compile Include="Scenes\Menus\AchievementsMenu.cs" />
+    <Compile Include="Scenes\Menus\LeadersboardMenu.cs" />
+    <Compile Include="Scenes\Menus\LevelGameOverMenu.cs" />
+    <Compile Include="Scenes\Menus\LevelPauseMenu.cs" />
+    <Compile Include="Scenes\Menus\MainMenu.cs" />
+    <Compile Include="Scenes\Menus\NewGameMenu.cs" />
+    <Compile Include="Scenes\Menus\OptionsMenu.cs" />
+    <Compile Include="Scenes\Menus\TutorialMenu.cs" />
+    <Compile Include="Scenes\AchievementPopup.cs" />
+    <Compile Include="Scenes\IntroScene.cs" />
+    <Compile Include="Scenes\SplashScreen.cs" />
+    <Compile Include="Sprites\AchievementEntry.cs" />
+    <Compile Include="Sprites\BoardClearedBitmapText.cs" />
+    <Compile Include="Sprites\ComboText.cs" />
+    <Compile Include="Sprites\GoldenHamstaSparkle.cs" />
+    <Compile Include="Sprites\LeaderboardEntry.cs" />
+    <Compile Include="Sprites\LevelUpBitmapText.cs" />
+    <Compile Include="Sprites\ProgressBar.cs" />
+    <Compile Include="Sprites\RainbowEffect.cs" />
+    <Compile Include="Sprites\RandomPairOfBlinkingEyes.cs" />
+    <Compile Include="Sprites\RisingUpPointsText.cs" />
+    <Compile Include="Sprites\ZoomInFadeOutText.cs" />
+    <Compile Include="Utils.cs" />
+    <Compile Include="Activity.cs" />
+    <Compile Include="HamstasKittiesGame.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Assets\AboutAssets.txt" />
+    <None Include="Properties\AndroidManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Icon.png" />
+    <AndroidResource Include="Resources\drawable\Splash.png" />
+    <AndroidResource Include="Resources\values\Styles.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\Android.DS.GameLibrary\Android.DS.GameLibrary.csproj">
+      <Project>{58E53849-EC04-4A94-A0CC-0352E52DC990}</Project>
+      <Name>Android.DS.GameLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Android.3rdParty.MercuryParticleEngine\Android.3rdParty.MercuryParticleEngine.csproj">
+      <Project>{F3618F71-E2AB-4B9E-AFF5-C63EECE0100D}</Project>
+      <Name>Android.3rdParty.MercuryParticleEngine</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Content\ParticleEffects\BigExplosion.xnb" />
+    <AndroidAsset Include="Assets\Content\ParticleEffects\Bubbles.xnb" />
+    <AndroidAsset Include="Assets\Content\ParticleEffects\GokuPower.xnb" />
+    <AndroidAsset Include="Assets\Content\ParticleEffects\MagicBomb.xnb" />
+    <AndroidAsset Include="Assets\Content\ParticleEffects\MagicTrail.xnb" />
+    <AndroidAsset Include="Assets\Content\ParticleEffects\SmokePoof.xnb" />
+    <AndroidAsset Include="Assets\Content\Sprites\Fonts\SpriteFonts\BoardClearedBoard.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Fonts\SpriteFonts\BoardClearedCleared.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Fonts\SpriteFonts\BoardClearedScore.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Fonts\SpriteFonts\Countdown0.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Fonts\SpriteFonts\Countdown1.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Fonts\SpriteFonts\Countdown2.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Fonts\SpriteFonts\Countdown3.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Fonts\SpriteFonts\Countdown4.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Fonts\SpriteFonts\Countdown5.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Fonts\SpriteFonts\Countdown6.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Fonts\SpriteFonts\Countdown7.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Fonts\SpriteFonts\Countdown8.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Fonts\SpriteFonts\Countdown9.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Fonts\SpriteFonts\CountdownSeparator.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Fonts\SpriteFonts\levelClearedGO.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Fonts\SpriteFonts\LevelClearedLevel.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Fonts\SpriteFonts\LevelClearedNumber0.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Fonts\SpriteFonts\LevelClearedNumber1.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Fonts\SpriteFonts\LevelClearedNumber2.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Fonts\SpriteFonts\LevelClearedNumber3.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Fonts\SpriteFonts\LevelClearedNumber4.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Fonts\SpriteFonts\LevelClearedNumber5.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Fonts\SpriteFonts\LevelClearedNumber6.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Fonts\SpriteFonts\LevelClearedNumber7.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Fonts\SpriteFonts\LevelClearedNumber8.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Fonts\SpriteFonts\LevelClearedNumber9.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Fonts\AKADYLAN PLAIN.TTF" />
+    <AndroidAsset Include="Assets\Content\Sprites\Fonts\CHUBBY.TTF" />
+    <AndroidAsset Include="Assets\Content\Sprites\Global\AchievementOkButton.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Global\AchievementShareButton.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Global\AchivementUnlockedBaseShield.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Global\AchivementUnlockedHamsta.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Global\HamstaBlink.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Global\Loading.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Global\MainTitle.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\BackToGameButton.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\Block1.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\Block1Blink.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\Block2.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\Block2Blink.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\Block3.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\Block3Blink.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\Block4.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\Block4Blink.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\Block5.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\Block5Blink.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\BombAccessory.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\BombAnimationFrame01.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\BombAnimationFrame02.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\BombAnimationFrame03.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\BombAnimationFrame04.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\BombAnimationFrame05.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\BombAnimationFrame06.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\BombAnimationFrame07.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\BombAnimationFrame08.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\BombAnimationFrame09.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\BombAnimationFrame10.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\BombAnimationFrame11.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\BombAnimationFrame12.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\BombAnimationFrame13.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\BombAnimationFrame14.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\GameOverQuit.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\GameOverRetry.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\GameOverTitle.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\GamePausedTitle.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\GokuAccessory.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\GokuAnimationFrame01.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\GokuAnimationFrame02.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\GokuAnimationFrame03.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\GokuAnimationFrame04.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\GokuAnimationFrame05.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\GokuAnimationFrame06.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\GokuAnimationFrame07.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\GokuAnimationFrame08.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\GokuAnimationFrame09.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\GokuAnimationFrame10.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\GokuAnimationFrame11.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\GokuAnimationFrame12.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\GokuAnimationFrame13.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\GokuAnimationFrame14.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\GokuAnimationFrame15.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\GokuAnimationFrame16.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\GoldenBlock.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\GoldenBlockSparkle.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\MagicBombAccessory.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\MainMenuBG.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\NewHighscore.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\PauseNormal.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\QuittingButton.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\RainbowHamsta.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\RainbowHamstaBlink.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\RainbowRing.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\Share.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\SoloEyes.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\SoundOffNormal.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\SoundOnNormal.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\SubmitScore.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\TimeBack.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\TimeUpTitle.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\TryAgain.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\TutorialButton.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\UnmovableBlock.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\UnmovableBlockBlink.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\InGame\YouScored.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Intro\Intro1.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Intro\Intro10.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Intro\Intro11.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Intro\Intro12.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Intro\Intro2.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Intro\Intro3.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Intro\Intro4.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Intro\Intro5.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Intro\Intro6.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Intro\Intro7.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Intro\Intro8.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Intro\Intro9.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\AboutButton.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\AboutMenuBG.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\AchievementsNormal.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\AchievementsTitle.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\AchivementLocked.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\AchivementUnlocked.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\ClassicModeBigButton.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\ClassicModeTitle.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\ClassicTitle.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\ContinueGameButton.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\ContinueGameButtonDisabled.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\CountdownModeBigButton.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\CountdownModeBigButtonDisabled.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\CountdownModeTitle.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\CountdownTitle.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\DroppinModeBigButton.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\DroppinModeBigButtonDisabled.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\DroppinModeTitle.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\DroppinTitle.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\MainMenuBG.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\MainMenuLeaderboardButton.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\MainMenuTutorial.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\NewGameButton.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\OptionsButton.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\OptionsMusicOff.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\OptionsMusicOn.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\OptionsNameField.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\OptionsSoundFXOff.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\OptionsSoundFXOn.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\OptionsTextPlaceholder.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\OptionsTitle.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\OptionsVibrationOff.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\OptionsVibrationOn.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\ProfileTitle.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\RatingButton.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\RelaxModeBigButton.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\RelaxModeBigButtonDisabled.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\RelaxTitle.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\SelectedModeButtonFrame.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\TimeBack.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\TrophyBronze.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\TrophyGold.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu1\TrophySilver.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu2\AchievementsBackground.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu2\AchievementsOverLayer.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu2\GameOptionsBackground.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu2\LeaderboardBackground.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu2\LeaderboardOverLayer.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\MainMenu2\ProfileOptionsBackground.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\SpriteSheetPacker\Sprite Sheet Packer.exe" />
+    <AndroidAsset Include="Assets\Content\Sprites\SpriteSheetPacker\SpriteSheetPacker.XnaExporters.dll" />
+    <AndroidAsset Include="Assets\Content\Sprites\SpriteSheetPacker\sspack.exe" />
+    <AndroidAsset Include="Assets\Content\Sprites\SpriteSheets\FontsSpriteSheet.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\SpriteSheets\FontsSpriteSheet.txt" />
+    <AndroidAsset Include="Assets\Content\Sprites\SpriteSheets\GlobalSpriteSheet.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\SpriteSheets\GlobalSpriteSheet.txt" />
+    <AndroidAsset Include="Assets\Content\Sprites\SpriteSheets\InGameSpriteSheet.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\SpriteSheets\InGameSpriteSheet.txt" />
+    <AndroidAsset Include="Assets\Content\Sprites\SpriteSheets\InGameSpriteSheetDXT.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\SpriteSheets\InGameSpriteSheetDXT.txt" />
+    <AndroidAsset Include="Assets\Content\Sprites\SpriteSheets\IntroSpriteSheet.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\SpriteSheets\IntroSpriteSheet.txt" />
+    <AndroidAsset Include="Assets\Content\Sprites\SpriteSheets\MainMenu1SpriteSheet.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\SpriteSheets\MainMenu1SpriteSheet.txt" />
+    <AndroidAsset Include="Assets\Content\Sprites\SpriteSheets\MainMenu2SpriteSheet.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\SpriteSheets\MainMenu2SpriteSheet.txt" />
+    <AndroidAsset Include="Assets\Content\Sprites\SpriteSheets\Tutorial1SpriteSheet.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\SpriteSheets\Tutorial1SpriteSheet.txt" />
+    <AndroidAsset Include="Assets\Content\Sprites\SpriteSheets\Tutorial1SpriteSheetDXT.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\SpriteSheets\Tutorial1SpriteSheetDXT.txt" />
+    <AndroidAsset Include="Assets\Content\Sprites\Tutorial1\TutorialPage01.jpg" />
+    <AndroidAsset Include="Assets\Content\Sprites\Tutorial1\TutorialPage02.jpg" />
+    <AndroidAsset Include="Assets\Content\Sprites\Tutorial1\TutorialPage03.jpg" />
+    <AndroidAsset Include="Assets\Content\Sprites\Tutorial1\TutorialPage04.jpg" />
+    <AndroidAsset Include="Assets\Content\Sprites\BlankPixel.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\ClassicModeBG.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\CountdownModeBG.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\DroppinModeBG.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\RelaxModeBG.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\Splash.png" />
+    <AndroidAsset Include="Assets\Content\Sprites\SwipeTransitionMask.png" />
+    <AndroidAsset Include="Assets\Content\.DS_Store" />
+    <AndroidAsset Include="Assets\Content\AchievementEntryDescription.xnb" />
+    <AndroidAsset Include="Assets\Content\AchievementEntryTitle.xnb" />
+    <AndroidAsset Include="Assets\Content\AhAhAh.wav" />
+    <AndroidAsset Include="Assets\Content\AhAhAhAhAh.wav" />
+    <AndroidAsset Include="Assets\Content\AkaDylan32OutlinedSpriteFont.png" />
+    <AndroidAsset Include="Assets\Content\AkaDylan32OutlinedSpriteFont.xnb" />
+    <AndroidAsset Include="Assets\Content\Amazing.wav" />
+    <AndroidAsset Include="Assets\Content\BigAchievementEntryDescription.xnb" />
+    <AndroidAsset Include="Assets\Content\BigAchievementEntryTitle.xnb" />
+    <AndroidAsset Include="Assets\Content\Bomber.wav" />
+    <AndroidAsset Include="Assets\Content\BombHamstaExplosionSound.wav" />
+    <AndroidAsset Include="Assets\Content\ButtonReleaseSound.wav" />
+    <AndroidAsset Include="Assets\Content\ChickenHamstaSound.wav" />
+    <AndroidAsset Include="Assets\Content\ClassicModeBGMusic.mp3" />
+    <AndroidAsset Include="Assets\Content\Combo.wav" />
+    <AndroidAsset Include="Assets\Content\CountdownModeBGMusic.mp3" />
+    <AndroidAsset Include="Assets\Content\DebugInfo.xnb" />
+    <AndroidAsset Include="Assets\Content\DroppinModeBGMusic.mp3" />
+    <AndroidAsset Include="Assets\Content\EvilLaugh.wav" />
+    <AndroidAsset Include="Assets\Content\Explosion.png" />
+    <AndroidAsset Include="Assets\Content\Fantastic.wav" />
+    <AndroidAsset Include="Assets\Content\FirstScreenMainMenuGameModesButtonsWoosh.wav" />
+    <AndroidAsset Include="Assets\Content\GameOver.wav" />
+    <AndroidAsset Include="Assets\Content\GameOverJingle.wav" />
+    <AndroidAsset Include="Assets\Content\Go.wav" />
+    <AndroidAsset Include="Assets\Content\GokuPower.wav" />
+    <AndroidAsset Include="Assets\Content\GoldHamstaDropSound.wav" />
+    <AndroidAsset Include="Assets\Content\HamstaDroppedSound.wav" />
+    <AndroidAsset Include="Assets\Content\HamstaMatchingSound1.wav" />
+    <AndroidAsset Include="Assets\Content\HamstaMatchingSound2.wav" />
+    <AndroidAsset Include="Assets\Content\HamstaMatchingSound3.wav" />
+    <AndroidAsset Include="Assets\Content\HamstaMatchingSound4.wav" />
+    <AndroidAsset Include="Assets\Content\HamstaSimpleExplosionSound.wav" />
+    <AndroidAsset Include="Assets\Content\HnK.wav" />
+    <AndroidAsset Include="Assets\Content\HurryUp.wav" />
+    <AndroidAsset Include="Assets\Content\InGamePointsLetters.xnb" />
+    <AndroidAsset Include="Assets\Content\IntroLetters.xnb" />
+    <AndroidAsset Include="Assets\Content\JessicaRainbowExplosion.png" />
+    <AndroidAsset Include="Assets\Content\KittyClearedSound.wav" />
+    <AndroidAsset Include="Assets\Content\KittyDroppedSound.wav" />
+    <AndroidAsset Include="Assets\Content\Lasah.wav" />
+    <AndroidAsset Include="Assets\Content\Laser.png" />
+    <AndroidAsset Include="Assets\Content\LaserUp.png" />
+    <AndroidAsset Include="Assets\Content\LastSecondsCountdownModeSound.wav" />
+    <AndroidAsset Include="Assets\Content\LeaderboardsDescription.xnb" />
+    <AndroidAsset Include="Assets\Content\LeaderboardsRank.xnb" />
+    <AndroidAsset Include="Assets\Content\LeaderboardsTitle.xnb" />
+    <AndroidAsset Include="Assets\Content\MagicBomb.wav" />
+    <AndroidAsset Include="Assets\Content\MainMenuTheme.mp3" />
+    <AndroidAsset Include="Assets\Content\MainMenuTitleDropSound.wav" />
+    <AndroidAsset Include="Assets\Content\NewPowerUpHamstaSound.wav" />
+    <AndroidAsset Include="Assets\Content\OhhhLennyWizard.wav" />
+    <AndroidAsset Include="Assets\Content\OhNoBadKitty.wav" />
+    <AndroidAsset Include="Assets\Content\OhOoohh.wav" />
+    <AndroidAsset Include="Assets\Content\Particle004.png" />
+    <AndroidAsset Include="Assets\Content\Particle005.png" />
+    <AndroidAsset Include="Assets\Content\Ready.wav" />
+    <AndroidAsset Include="Assets\Content\ScoreloopUsername.xnb" />
+    <AndroidAsset Include="Assets\Content\SlideWhistleDown.wav" />
+    <AndroidAsset Include="Assets\Content\SlideWhistleUp.wav" />
+    <AndroidAsset Include="Assets\Content\Square.png" />
+    <AndroidAsset Include="Assets\Content\Star.png" />
+    <AndroidAsset Include="Assets\Content\StatsCurrentLevelLetters.xnb" />
+    <AndroidAsset Include="Assets\Content\StatsProgressBarLetters.xnb" />
+    <AndroidAsset Include="Assets\Content\StatsScoreBigLetters.xnb" />
+    <AndroidAsset Include="Assets\Content\StatsScoreNormalLetters.xnb" />
+    <AndroidAsset Include="Assets\Content\Wooow.wav" />
+    <AndroidAsset Include="Assets\Content\Yeah.wav" />
+    <AndroidAsset Include="Assets\.DS_Store" />
+  </ItemGroup>
+</Project>
