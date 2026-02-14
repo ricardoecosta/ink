@@ -3,12 +3,6 @@ using System.Threading;
 
 #if IPHONE
 using MonoTouch.SystemConfiguration;
-#elif WINDOWS_PHONE
-using System.Net.NetworkInformation;
-using Microsoft.Phone.Net.NetworkInformation;
-using System.Net;
-using GameLibrary.Utils;
-using System.Windows;
 #endif
 
 namespace GameLibrary.Core
@@ -25,11 +19,6 @@ namespace GameLibrary.Core
 				{
 					UpdateNetworkAvailability((flags & NetworkReachabilityFlags.Reachable) == NetworkReachabilityFlags.Reachable);
 				});
-#elif WINDOWS_PHONE
-            DeviceNetworkInformation.NetworkAvailabilityChanged += (sender, e) =>
-            {
-                CheckInternetConnection(false);
-            };
 #elif ANDROID
             // TODO
 #endif
@@ -37,56 +26,12 @@ namespace GameLibrary.Core
 
         public void CheckInternetConnection(bool asynch)
         {
-#if WINDOWS_PHONE
-            if (!asynch)
-            {
-                if (DeviceNetworkInformation.IsNetworkAvailable)
-                {
-                    TestInternetConnectivity();
-                }
-                else
-                {
-                    UpdateNetworkAvailability(false);
-                }
-            }
-            else
-            {
-                ThreadPool.QueueUserWorkItem((o) =>
-                        {
-                            CheckInternetConnection(false);
-                        });
-            }
-#endif
+            // TODO: Implement for non-WINDOWS_PHONE platforms
         }
 
         private void TestInternetConnectivity()
         {
-            // TODO: Add custom timeout!!
-#if WINDOWS_PHONE
-            HttpWebRequest request = HttpWebRequest.CreateHttp("http://www.google.com");
-            request.Method = "HEAD";
-
-            request.BeginGetResponse(
-                (result) =>
-                {
-                    try
-                    {
-                        HttpWebResponse response = (HttpWebResponse)request.EndGetResponse(result);
-                        Deployment.Current.Dispatcher.BeginInvoke(() =>
-                        {
-                            UpdateNetworkAvailability(response.StatusCode == HttpStatusCode.OK);
-                        });
-                    }
-                    catch
-                    {
-                        Deployment.Current.Dispatcher.BeginInvoke(() =>
-                        {
-                            UpdateNetworkAvailability(false);
-                        });
-                    }
-                },
-                null);
-#endif
+            // TODO: Implement for non-WINDOWS_PHONE platforms
         }
 
         private void UpdateNetworkAvailability(bool isNetworkAvailable)

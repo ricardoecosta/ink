@@ -15,11 +15,6 @@ using Microsoft.Xna.Framework.Input.Touch;
 using ProjectMercury.Renderers;
 using GameLibrary.Analytics;
 
-#if WINDOWS_PHONE
-using Microsoft.Phone.Tasks;
-using Microsoft.Xna.Framework.GamerServices;
-#endif
-
 namespace GameLibrary.Core
 {
 	public abstract class Director : ITouchableContainer
@@ -51,9 +46,6 @@ namespace GameLibrary.Core
 			SettingsManager.RegisterApplicationActivationAwareComponent (this);
 			SettingsManager.RegisterApplicationDeactivationAwareComponent (this);
 
-#if WINDOWS_PHONE
-            ApplicationLifeCycleManager = new ApplicationLifeCycleManager(this);
-#endif
 			GlobalResourcesManager = new ResourcesManager (contentManager);
 			CurrentResourcesManager = new ResourcesManager (new ContentManager (Game.Services, contentManager.RootDirectory));
 			SoundManager = new SoundManager (this);
@@ -62,15 +54,9 @@ namespace GameLibrary.Core
 			DeviceInfo = new DeviceInfo ();
 
 			if (MotionSensorsEnabled) {
-#if WINDOWS_PHONE
-                AccelerometerManager = new AccelerometerManager(this, Game.Window);
-#endif
 			}
 
 			if (VibratorEnabled) {
-#if WINDOWS_PHONE
-                VibratorManager = new VibratorManager(this);
-#endif
 			}
 
 			GraphicsDeviceManager = graphicsDeviceManager;
@@ -80,13 +66,7 @@ namespace GameLibrary.Core
 			if (!SettingsManager.Initialize ()
 				|| !AchievementsManager.Initialize ()
 				|| !GlobalResourcesManager.Initialize ()
-				|| !SoundManager.Initialize ()
-
-#if WINDOWS_PHONE
- || (MotionSensorsEnabled && !AccelerometerManager.Initialize())
-                || (VibratorEnabled && !VibratorManager.Initialize())
-#endif
-) {
+				|| !SoundManager.Initialize ()) {
 				IsInitialized = false;
 			}
 
@@ -103,13 +83,7 @@ namespace GameLibrary.Core
 				(!GlobalResourcesManager.Finalize ()
 				|| !SoundManager.Finalize ()
 				|| !AchievementsManager.Finalize ()
-				|| !SettingsManager.Finalize ())
-
-#if WINDOWS_PHONE
- || (MotionSensorsEnabled && !AccelerometerManager.Finalize())
-                || (VibratorEnabled && !VibratorManager.Finalize())
-#endif
-) {
+				|| !SettingsManager.Finalize ())) {
 				return false;
 			}
 
@@ -698,13 +672,6 @@ namespace GameLibrary.Core
 		public Game Game { get; set; }
 
 		private TouchPanelManager TouchPanelManager { get; set; }
-
-#if WINDOWS_PHONE
-        // TODO: Complete cross platform code.
-        private ApplicationLifeCycleManager ApplicationLifeCycleManager { get; set; }
-        public AccelerometerManager AccelerometerManager { get; private set; }
-        public VibratorManager VibratorManager { get; private set; }
-#endif
 
 		public SettingsManager SettingsManager { get; private set; }
 		public SoundManager SoundManager { get; private set; }

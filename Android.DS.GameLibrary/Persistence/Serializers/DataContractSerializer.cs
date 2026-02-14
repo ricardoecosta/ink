@@ -4,10 +4,6 @@ using System.IO;
 using System.IO.IsolatedStorage;
 using System.Text;
 
-#if WINDOWS_PHONE
-using System.Runtime.Serialization;
-#endif
-
 namespace GameLibrary.Core.Serializers
 {
     public class DataContractSerializer<T> : AbstractSerializer<T>
@@ -51,10 +47,6 @@ namespace GameLibrary.Core.Serializers
                         builder.Append(Environment.NewLine);
                         byte[] bytes = Encoding.UTF8.GetBytes(builder.ToString());
                         memoryStream.Write(bytes, 0, bytes.Length);
-#if WINDOWS_PHONE
-                        // TODO: Complete cross platform code.
-                        new DataContractSerializer(typeof(Dictionary<string, object>), KnownTypes).WriteObject(memoryStream, dataToSave);
-#endif
                         byte[] buffer = memoryStream.ToArray();
                         stream.Write(buffer, 0, buffer.Length);
                     }
@@ -88,12 +80,6 @@ namespace GameLibrary.Core.Serializers
                                         }
                                     }
                                     stream.Position = str.Length + Environment.NewLine.Length;
-                                    
-#if WINDOWS_PHONE
-                                    // TODO: Complete cross platform code.
-                                    DataContractSerializer serializer = new DataContractSerializer(typeof(Dictionary<string, object>), knownTypes);
-                                    result = (T)serializer.ReadObject(stream);
-#endif
                                 }
                                 catch { }
                             }

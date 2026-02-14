@@ -6,9 +6,7 @@ namespace GameLibrary.Utils
 	{
 		public static long CurrentMemoryMB {
 			get {
-#if WINDOWS_PHONE
-                return Microsoft.Phone.Info.DeviceStatus.ApplicationCurrentMemoryUsage / 1024 / 1024;
-#elif ANDROID
+#if ANDROID
 				return 0; // TODO
 #elif IOS
 				return 0; // TODO
@@ -20,9 +18,7 @@ namespace GameLibrary.Utils
 
 		public static long PeakMemoryMB {
 			get {
-#if WINDOWS_PHONE
-                return Microsoft.Phone.Info.DeviceStatus.ApplicationPeakMemoryUsage / 1024 / 1024;
-#elif ANDROID
+#if ANDROID
 				return 0; // TODO
 #elif IOS
 				return 0; // TODO
@@ -34,9 +30,7 @@ namespace GameLibrary.Utils
 		
 		public static long TotalMemoryMB {
 			get {
-#if WINDOWS_PHONE
-                return Microsoft.Phone.Info.DeviceStatus.DeviceTotalMemory / 1024 / 1024;
-#elif ANDROID
+#if ANDROID
 				return 0; // TODO
 #elif IOS
 				return 0; // TODO

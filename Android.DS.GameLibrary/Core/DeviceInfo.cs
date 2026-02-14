@@ -9,9 +9,6 @@ namespace GameLibrary.Core
     {
         public DeviceInfo()
         {
-#if WINDOWS_PHONE
-            TotalMemoryMB = Microsoft.Phone.Info.DeviceStatus.DeviceTotalMemory / 1024 / 1024;
-#endif
         }
 
         public long TotalMemoryMB { set; get; }
