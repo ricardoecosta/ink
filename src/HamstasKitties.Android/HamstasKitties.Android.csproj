@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-android</TargetFramework>
+    <SupportedOSPlatformVersion>24</SupportedOSPlatformVersion>
+    <OutputType>Exe</OutputType>
+    <ApplicationId>com.hamstasnkitties.game</ApplicationId>
+    <ApplicationVersion>1</ApplicationVersion>
+    <ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
+    <RootNamespace>HamstasKitties.Android</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MonoGame.Framework.Android" Version="3.8.2.1105" />
+    <PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.2.1105" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HamstasKitties.Shared\HamstasKitties.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
