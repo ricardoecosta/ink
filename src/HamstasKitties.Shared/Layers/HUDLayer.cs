@@ -13,6 +13,8 @@ using HamstasKitties.Extras;
 using Microsoft.Xna.Framework;
 using HamstasKitties.Scenes.Menus;
 using HamstasKitties.Constants;
+using HamstasKitties.Utils;
+using static HamstasKitties.Utils.Utils;
 
 namespace HamstasKitties.Layers
 {
@@ -123,7 +125,7 @@ namespace HamstasKitties.Layers
 
         private void InitializeCharsTexturesDictionaries()
         {
-            LevelUpTexturesCharsDictionary = Utils.GetLevelClearedCharacters();
+            LevelUpTexturesCharsDictionary = GetLevelClearedCharacters();
         }
 
         private void InitializeButtons()

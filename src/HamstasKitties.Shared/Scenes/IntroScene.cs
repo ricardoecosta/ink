@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework;
 using HamstasKitties.Logic;
 using System.Collections.Generic;
 using HamstasKitties.Utils;
+using static HamstasKitties.Utils.Utils;
 using HamstasKitties.Constants;
 using System.IO;
 

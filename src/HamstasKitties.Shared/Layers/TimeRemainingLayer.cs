@@ -15,6 +15,8 @@ using HamstasKitties.Scenes.Menus;
 using HamstasKitties.Constants;
 using HamstasKitties.Extensions;
 using HamstasKitties.Animation.Tween;
+using HamstasKitties.Utils;
+using static HamstasKitties.Utils.Utils;
 
 namespace HamstasKitties.Layers
 {
@@ -34,7 +36,7 @@ namespace HamstasKitties.Layers
         {
             base.Initialize();
 
-            CurrentTimeBitmapText = new BitmapText(this, Utils.GetCountdownCharacters(), new DateTime(CountdownModeLevel.CurrentLevelTime.Ticks).ToString("mm:ss"), TextPosition, BitmapText.AlignmentTypes.Left, 45);
+            CurrentTimeBitmapText = new BitmapText(this, GetCountdownCharacters(), new DateTime(CountdownModeLevel.CurrentLevelTime.Ticks).ToString("mm:ss"), TextPosition, BitmapText.AlignmentTypes.Left, 45);
             if (CountdownModeLevel.IsInHurryTimeMode)
             {
                 CurrentTimeBitmapText.Color = Color.Red;

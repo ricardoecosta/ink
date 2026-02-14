@@ -5,6 +5,7 @@ using System.Text;
 using HamstasKitties.GameModes;
 using HamstasKitties.Management;
 using HamstasKitties.Utils;
+using static HamstasKitties.Utils.Utils;
 using HamstasKitties.Constants;
 using HamstasKitties.Mechanics;
 

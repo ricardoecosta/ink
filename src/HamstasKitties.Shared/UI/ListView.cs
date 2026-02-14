@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework;
 using HamstasKitties.Animation;
 using HamstasKitties.Extensions;
 using HamstasKitties.Utils;
+using static HamstasKitties.Utils.Utils;
 
 namespace HamstasKitties.UI
 {

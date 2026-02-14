@@ -8,6 +8,7 @@ using HamstasKitties.Core;
 using HamstasKitties.Management;
 using Microsoft.Xna.Framework.Graphics;
 using HamstasKitties.Utils;
+using static HamstasKitties.Utils.Utils;
 using HamstasKitties.Animation.Tween;
 using HamstasKitties.Social.Gaming;
 using HamstasKitties.Constants;
@@ -150,7 +151,7 @@ namespace HamstasKitties.Layers
             // TODO: Implement username update from service
             if (DirectorRef.CurrentUsername != null)
             {
-                UsernameText.UpdateTextString(Utils.ApplyEllipsis(DirectorRef.CurrentUsername, Font, TextLine.Size.X));
+                UsernameText.UpdateTextString(ApplyEllipsis(DirectorRef.CurrentUsername, Font, TextLine.Size.X));
             }
 
             base.Update(elapsedTime);

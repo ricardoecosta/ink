@@ -1,0 +1,14 @@
+{
+  "id": "hnk-8xp",
+  "title": "Phase 3.4: Migrate BlockEmitters",
+  "description": "Migrate BlockEmitter and mode-specific emitters: ClassicModeBlockEmitter, CountdownModeBlockEmitter, etc.",
+  "status": "closed",
+  "priority": 0,
+  "issue_type": "task",
+  "assignee": "block-emitters-migrator",
+  "owner": "rdscosta@gmail.com",
+  "created_at": "2026-02-14T14:43:10.182931Z",
+  "created_by": "Ricardo",
+  "updated_at": "2026-02-14T16:42:41.700334Z",
+  "close_reason": "Completed"
+}

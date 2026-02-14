@@ -10,6 +10,9 @@ using HamstasKitties.Layers;
 using HamstasKitties.Animation;
 using HamstasKitties.Persistence;
 using HamstasKitties.Constants;
+using HamstasKitties.Utils;
+using static HamstasKitties.Utils.Utils;
+using Timer = HamstasKitties.Animation.Timer;
 
 namespace HamstasKitties.Scenes.GameModes
 {
@@ -95,7 +98,7 @@ namespace HamstasKitties.Scenes.GameModes
         protected override void LoadState()
         {
             base.LoadState();
-            TimeSpan time = TimeSpan.FromMilliseconds(Utils.GetDataFromDictionary<long>(State.CurrentStateSettings, PersistableSettingsConstants.CountdownLevelCurrentTimeKey, GlobalConstants.CountdownModeDurationInSeconds * 1000));
+            TimeSpan time = TimeSpan.FromMilliseconds(GetDataFromDictionary<long>(State.CurrentStateSettings, PersistableSettingsConstants.CountdownLevelCurrentTimeKey, GlobalConstants.CountdownModeDurationInSeconds * 1000));
             if (time.TotalMilliseconds > 0)
             {
                 ResetTimer(time.Seconds*1000);

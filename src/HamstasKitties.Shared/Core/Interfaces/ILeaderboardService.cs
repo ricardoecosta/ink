@@ -1,3 +1,5 @@
+#nullable disable
+
 namespace HamstasKitties.Core.Interfaces;
 
 public interface ILeaderboardService
@@ -6,7 +8,7 @@ public interface ILeaderboardService
     void SubmitScore(string leaderboardId, double score);
     IEnumerable<LeaderboardEntry> GetLeaderboard(string leaderboardId);
 
-    event EventHandler<ScoreSubmittedEventArgs>? OnScoreSubmitted;
+    event EventHandler<ScoreSubmittedEventArgs> OnScoreSubmitted;
 }
 
 public class LeaderboardEntry

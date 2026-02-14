@@ -1,7 +1,7 @@
 using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using ProjectMercury.Renderers;
+using HamstasKitties.Particles.Renderers;
 
 namespace HamstasKitties.Animation
 {

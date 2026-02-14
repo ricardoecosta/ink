@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using ProjectMercury.Renderers;
+using HamstasKitties.Particles.Renderers;
 using HamstasKitties.Camera;
 using HamstasKitties.Core;
 using HamstasKitties.Interaction;

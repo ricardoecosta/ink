@@ -11,6 +11,7 @@ using HamstasKitties.Animation;
 using System.IO;
 using HamstasKitties.Constants;
 using HamstasKitties.Utils;
+using static HamstasKitties.Utils.Utils;
 using HamstasKitties.Core;
 
 namespace HamstasKitties.Scenes.Menus
@@ -64,7 +65,7 @@ namespace HamstasKitties.Scenes.Menus
             director.LoadSingleScene(
                 (int)GameDirector.ScenesTypes.MainMenuFirstScreen,
                 true,
-                new MaskSwipeDirectorTransition(director, director.GlobalResourcesManager.GetCachedTexture((int)GameDirector.TextureAssets.SwipeTransitionMask), 2.5f, 0.4f, director.GlobalResourcesManager.GetCachedTexture((int)GameDirector.TextureAssets.Loading),
+                new MaskSwipeDirectorTransition(director, director.GlobalResourcesManager.GetCachedTexture((int)GameDirector.TextureAssets.SwipeTransitionMask), 2.5f, 0.4f, director.GlobalResourcesManager.GetCachedTexture((int)GameDirector.TextureAssets.Loading)),
                 () =>
                 {
                     director.CurrentResourcesManager.CacheSong((int)GameDirector.SongAssets.MainMenuTheme, GameDirector.SongAssets.MainMenuTheme.ToString());

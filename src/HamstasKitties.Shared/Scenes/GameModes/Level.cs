@@ -4,6 +4,7 @@ using HamstasKitties.Social.Achievements;
 using HamstasKitties.Social.Gaming;
 using HamstasKitties.UI;
 using HamstasKitties.Utils;
+using static HamstasKitties.Utils.Utils;
 using HamstasKitties.Constants;
 using HamstasKitties.Layers;
 using HamstasKitties.Management;
@@ -12,8 +13,9 @@ using HamstasKitties.Persistence;
 using Microsoft.Xna.Framework;
 using HamstasKitties.Scenes.GameModes;
 using Microsoft.Xna.Framework.Media;
+// using Microsoft.Xna.Framework.GamerServices; // Not available in MonoGame
 
-namespace HamstasKitties.Scenes.GameModes
+namespace HamstasKitties.GameModes
 {
     public abstract class Level : Scene
     {
@@ -52,7 +54,7 @@ namespace HamstasKitties.Scenes.GameModes
             AddLayer(BackgroundPanelLayer);
             AddLayer(BlocksPanelLayer);
             AddLayer(HUDInfoLayer);
-            Director.AchievementsManager.OnAchievementCompleted += new AchievementsManager.OnAchievementCompletedHandler(OnAchievementCompletedHandler);
+            Director.AchievementsManager.OnAchievementCompleted += new Core.AchievementsManager.OnAchievementCompletedHandler(OnAchievementCompletedHandler);
 
             // Loads saved game if exists
             if (State != null && State.HasCurrentState())
@@ -71,7 +73,7 @@ namespace HamstasKitties.Scenes.GameModes
 
         public override void Uninitialize()
         {
-            Director.AchievementsManager.OnAchievementCompleted -= new AchievementsManager.OnAchievementCompletedHandler(OnAchievementCompletedHandler);
+            Director.AchievementsManager.OnAchievementCompleted -= new Core.AchievementsManager.OnAchievementCompletedHandler(OnAchievementCompletedHandler);
             LevelBoardController.Uninitialize();
             Director.SoundManager.StopCurrentSong();
             base.Uninitialize();
@@ -116,17 +118,22 @@ namespace HamstasKitties.Scenes.GameModes
             int? demoExpiredDialog = GuideHelper.ShowSyncYesNoButtonAlertMsgBox("Trial Expired", string.Format("Trial mode is limited to {0} minutes. Would you like to buy full game?", GlobalConstants.TrialExpirationMilliseconds / 60 / 1000));
             if (demoExpiredDialog.HasValue && demoExpiredDialog.Value == 0)
             {
-                if (!Guide.SimulateTrialMode) // Assuming SimulateTrialMode is not set on a Release build
-                {
-                    Guide.ShowMarketplace(PlayerIndex.One);
-                }
-                else
-                {
-                    GuideHelper.ShowSyncOkButtonAlertMsgBox("Purchase Simulation", "Simulating application purchase while in non live mode.");
+                // NOTE: Guide.SimulateTrialMode and Guide.ShowMarketplace are Windows Phone specific
+                // and not available in MonoGame. This functionality has been disabled.
+                // Original code:
+                // if (!Guide.SimulateTrialMode)
+                // {
+                //     Guide.ShowMarketplace(PlayerIndex.One);
+                // }
+                // else
+                // {
+                //     GuideHelper.ShowSyncOkButtonAlertMsgBox("Purchase Simulation", "Simulating application purchase while in non live mode.");
+                //     Guide.SimulateTrialMode = false;
+                //     Director.IsTrialMode = Guide.IsTrialMode;
+                // }
 
-                    Guide.SimulateTrialMode = false;
-                    Director.IsTrialMode = Guide.IsTrialMode;
-                }
+                // For MonoGame, just show the game over screen
+                LevelBoardController.BlockEmitter.ShowGameOverScreen(false);
             }
             else
             {
@@ -237,11 +244,11 @@ namespace HamstasKitties.Scenes.GameModes
         protected virtual void LoadState()
         {
             // Load Level state
-            Score = Utils.GetDataFromDictionary<long>(State.CurrentStateSettings, PersistableSettingsConstants.GameModeCurrentScoreKey, InitialScore);
-            UpdateCurrentLevel(Utils.GetDataFromDictionary<int>(State.CurrentStateSettings, PersistableSettingsConstants.GameModeLevelNumberKey, InitialLevelNumber));
+            Score = GetDataFromDictionary<long>(State.CurrentStateSettings, PersistableSettingsConstants.GameModeCurrentScoreKey, InitialScore);
+            UpdateCurrentLevel(GetDataFromDictionary<int>(State.CurrentStateSettings, PersistableSettingsConstants.GameModeLevelNumberKey, InitialLevelNumber));
             LevelBoardController.LoadState();
-            GameSessionUUID = Utils.GetDataFromDictionary<string>(State.CurrentStateSettings, PersistableSettingsConstants.GameModeGameSessionUUID, Guid.NewGuid().ToString());
-            TotalPlayingTimeMilliseconds = Utils.GetDataFromDictionary<double>(State.CurrentStateSettings, PersistableSettingsConstants.TotalPlayingTimeMilliseconds, 0);
+            GameSessionUUID = GetDataFromDictionary<string>(State.CurrentStateSettings, PersistableSettingsConstants.GameModeGameSessionUUID, Guid.NewGuid().ToString());
+            TotalPlayingTimeMilliseconds = GetDataFromDictionary<double>(State.CurrentStateSettings, PersistableSettingsConstants.TotalPlayingTimeMilliseconds, 0);
         }
 
         public virtual void SaveState()
@@ -327,6 +334,15 @@ namespace HamstasKitties.Scenes.GameModes
         private double TotalPlayingTimeMilliseconds { get; set; }
         private bool WasTrialDialogShown { get; set; }
         public bool IsGameOver { get; set; }
+
+        /// <summary>
+        /// Logs game finish event to analytics. Stub implementation for now.
+        /// </summary>
+        public void LogGameFinishEventToAnalytics()
+        {
+            // TODO: Implement analytics logging
+            // This would typically log game session data to an analytics service
+        }
 
         #region Constants
 

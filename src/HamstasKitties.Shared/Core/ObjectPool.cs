@@ -1,5 +1,8 @@
+#nullable disable
 using System;
 using System.Collections.Generic;
+
+#nullable disable
 
 namespace HamstasKitties.Core;
 
@@ -11,10 +14,10 @@ namespace HamstasKitties.Core;
 public class ObjectPool<T> where T : class, new()
 {
     private readonly Stack<T> _pool;
-    private readonly Action<T>? _resetAction;
+    private readonly Action<T> _resetAction;
     private readonly int _maxSize;
 
-    public ObjectPool(int initialSize = 16, int maxSize = 256, Action<T>? resetAction = null)
+    public ObjectPool(int initialSize = 16, int maxSize = 256, Action<T> resetAction = null)
     {
         _pool = new Stack<T>(initialSize);
         _maxSize = maxSize;
@@ -30,7 +33,7 @@ public class ObjectPool<T> where T : class, new()
     public int Count => _pool.Count;
 
     /// <summary>
-    /// Get an object from the pool, or create a new one if empty.
+    /// Get an object from pool, or create a new one if empty.
     /// </summary>
     public T Get()
     {
@@ -42,7 +45,7 @@ public class ObjectPool<T> where T : class, new()
     }
 
     /// <summary>
-    /// Return an object to the pool for reuse.
+    /// Return an object to pool for reuse.
     /// </summary>
     public void Return(T obj)
     {
@@ -54,32 +57,10 @@ public class ObjectPool<T> where T : class, new()
     }
 
     /// <summary>
-    /// Clear all objects from the pool.
+    /// Clear all objects from pool.
     /// </summary>
     public void Clear()
     {
         _pool.Clear();
-    }
-}
-
-/// <summary>
-/// Pool for reusable timer objects.
-/// </summary>
-public class TimerPool : ObjectPool<HamstasKitties.Animation.Timer>
-{
-    public TimerPool(int initialSize = 32, int maxSize = 128)
-        : base(initialSize, maxSize, timer =>
-        {
-            timer.Stop();
-            timer.RedefineTimerDuration(0f);
-        })
-    {
-    }
-
-    public HamstasKitties.Animation.Timer Get(float duration)
-    {
-        var timer = Get();
-        timer.RedefineTimerDuration(duration);
-        return timer;
     }
 }

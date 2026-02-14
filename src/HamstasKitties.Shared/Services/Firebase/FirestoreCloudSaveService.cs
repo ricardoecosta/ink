@@ -1,3 +1,6 @@
+#nullable disable
+#nullable disable
+
 using HamstasKitties.Core.Interfaces;
 
 namespace HamstasKitties.Services.Firebase;
@@ -36,7 +39,7 @@ public class FirestoreCloudSaveService
         await Task.CompletedTask;
     }
 
-    public async Task<T?> LoadFromCloudAsync<T>(string key) where T : class
+    public async Task<T> LoadFromCloudAsync<T>(string key) where T : class
     {
         if (!_isInitialized) return null;
 
@@ -50,7 +53,7 @@ public class FirestoreCloudSaveService
         // return snapshot.Exists ? snapshot.ConvertTo<T>() : null;
 
         System.Diagnostics.Debug.WriteLine($"[CloudSave] Loaded {key} from cloud");
-        return await Task.FromResult<T?>(null);
+        return await Task.FromResult<T>(null);
     }
 
     public async Task SyncLocalToCloudAsync()

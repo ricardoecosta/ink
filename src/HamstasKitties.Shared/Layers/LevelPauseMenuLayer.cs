@@ -7,6 +7,7 @@ using HamstasKitties.UI;
 using Microsoft.Xna.Framework;
 using HamstasKitties.Sprites;
 using HamstasKitties.Utils;
+using static HamstasKitties.Utils.Utils;
 using HamstasKitties.Management;
 using HamstasKitties.Core;
 using HamstasKitties.Scenes;

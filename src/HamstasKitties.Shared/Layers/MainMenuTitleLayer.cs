@@ -6,10 +6,12 @@ using HamstasKitties.UI;
 using HamstasKitties.Management;
 using HamstasKitties.Animation.Tween;
 using HamstasKitties.Scenes.Menus;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Media;
 using System.Threading;
 using HamstasKitties.Constants;
 using HamstasKitties.Utils;
+using static HamstasKitties.Utils.Utils;
 
 namespace HamstasKitties.Layers
 {
@@ -113,7 +115,7 @@ namespace HamstasKitties.Layers
                 Song mainMenuThemeSong = director.CurrentResourcesManager.GetCachedSong((int)GameDirector.SongAssets.MainMenuTheme);
 
                 // Start playing theme music if not playing yet.
-                if (director.SoundManager.CurrentPlayingSong == null || director.SoundManager.CurrentPlayingSong.IsDisposed || director.SoundManager.CurrentPlayingSong != mainMenuThemeSong)
+                if (director.SoundManager.CurrentPlayingSong == null || director.SoundManager.IsCurrentSongDisposed || !object.ReferenceEquals(director.SoundManager.CurrentPlayingSong, mainMenuThemeSong))
                 {
                     director.SoundManager.PlaySong(mainMenuThemeSong, true);
                 }

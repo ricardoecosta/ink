@@ -1,3 +1,6 @@
+#nullable disable
+#nullable disable
+
 using HamstasKitties.Core.Interfaces;
 
 namespace HamstasKitties.Services.Firebase;
@@ -8,12 +11,12 @@ namespace HamstasKitties.Services.Firebase;
 public class FirestoreLeaderboardService : ILeaderboardService
 {
     private bool _isInitialized;
-    private string? _gameId;
+    private string _gameId;
     private readonly List<LeaderboardEntry> _cachedEntries = new();
 
     public bool IsInitialized => _isInitialized;
 
-    public event EventHandler<ScoreSubmittedEventArgs>? OnScoreSubmitted;
+    public event EventHandler<ScoreSubmittedEventArgs> OnScoreSubmitted;
 
     public void Initialize(string gameId, string gameSecret)
     {

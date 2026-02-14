@@ -5,6 +5,9 @@ using Microsoft.Xna.Framework;
 using HamstasKitties.Management;
 using HamstasKitties.Constants;
 using HamstasKitties.UI;
+using HamstasKitties.Utils;
+using static HamstasKitties.Utils.Utils;
+using IUpdateable = HamstasKitties.UI.IUpdateable;
 
 namespace HamstasKitties.Mechanics
 {

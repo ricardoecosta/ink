@@ -13,6 +13,9 @@ using HamstasKitties.Social.Achievements;
 using Microsoft.Xna.Framework;
 using HamstasKitties.Animation.Tween;
 using HamstasKitties.Constants;
+using HamstasKitties.Management;
+using HamstasKitties.Utils;
+using static HamstasKitties.Utils.Utils;
 
 namespace HamstasKitties.Scenes
 {
@@ -47,12 +50,12 @@ namespace HamstasKitties.Scenes
             AddLayer(AchievementPopupButtonsLayer);
             AddLayer(achievementPopupDetailsLayer);
 
-            List<StringBuilder> titleLines = Utils.GetTextLines(
+            List<StringBuilder> titleLines = GetTextLines(
                 achievement.Data.Name,
                 Director.GlobalResourcesManager.GetCachedFont((int)GameDirector.FontsAssets.BigAchievementEntryTitle),
                 375, 1);
 
-            List<StringBuilder> descriptionLines = Utils.GetTextLines(
+            List<StringBuilder> descriptionLines = GetTextLines(
                 achievement.Data.Description,
                 Director.GlobalResourcesManager.GetCachedFont((int)GameDirector.FontsAssets.BigAchievementEntryDescription),
                 375, 3);
@@ -105,7 +108,7 @@ namespace HamstasKitties.Scenes
 
         private void CreateCoolnessHamsta(Layer parentLayer)
         {
-            Texture coolHamsta = GameDirector.Instance.GlobalResourcesManager.GetCachedTexture((int)GameDirector.TextureAssets.AchivementUnlockedHamsta);
+            Texture coolHamsta = GameDirector.Instance.GlobalResourcesManager.GetCachedTexture((int)GameDirector.TextureAssets.AchievementUnlockedHamsta);
             Texture coolHamstaBlink = GameDirector.Instance.GlobalResourcesManager.GetCachedTexture((int)GameDirector.TextureAssets.HamstaBlink);
 
             LayerObject coolHamstaLayerObject = new LayerObject(parentLayer, coolHamsta, new Vector2(Width - coolHamsta.Width, Height), Vector2.Zero);

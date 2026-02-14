@@ -1,3 +1,6 @@
+#nullable disable
+#nullable disable
+
 using HamstasKitties.Core.Interfaces;
 
 namespace HamstasKitties.Services.Firebase;
@@ -9,8 +12,8 @@ namespace HamstasKitties.Services.Firebase;
 public class FirebaseAnalyticsService : IAnalyticsService
 {
     private bool _isInitialized;
-    private string? _apiKey;
-    private string? _appVersion;
+    private string _apiKey;
+    private string _appVersion;
 
     public bool IsInitialized => _isInitialized;
 

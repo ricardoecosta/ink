@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using HamstasKitties.Core;
 using HamstasKitties.UI;
 using HamstasKitties.Management;
 using HamstasKitties.Animation;
@@ -10,6 +11,7 @@ using HamstasKitties.GameModes;
 using HamstasKitties.Constants;
 using Microsoft.Xna.Framework.Audio;
 using HamstasKitties.Utils;
+using static HamstasKitties.Utils.Utils;
 using Microsoft.Xna.Framework;
 using HamstasKitties.Persistence;
 using System.Runtime.Serialization;
@@ -38,22 +40,22 @@ namespace HamstasKitties.Mechanics
 
         public void Initialize()
         {
-            StateManager = Director.Instance.StateManager;
-            switch (Director.Instance.CurrentGameMode)
+            StateManager = GameDirector.Instance.StateManager;
+            switch (GameDirector.Instance.CurrentGameMode)
             {
-                case Director.GameModes.Classic:
+                case GameDirector.GameModes.Classic:
                     BlockEmitter = new ClassicModeBlockEmitter(Level, State);
                     break;
 
-                case Director.GameModes.Countdown:
+                case GameDirector.GameModes.Countdown:
                     BlockEmitter = new CountdownModeBlockEmitter(Level, State);
                     break;
 
-                case Director.GameModes.GoldRush:
+                case GameDirector.GameModes.GoldRush:
                     BlockEmitter = new GoldRushModeBlockEmitter(Level, State);
                     break;
 
-                case Director.GameModes.ChillOut:
+                case GameDirector.GameModes.ChillOut:
                     BlockEmitter = new ChilloutModeBlockEmitter(Level, State);
                     break;
 
@@ -188,7 +190,7 @@ namespace HamstasKitties.Mechanics
                 }
 
                 UpdateCounters(block);
-                Level level = Director.Instance.CurrentScene as Level ?? Director.Instance.UnderlyingScene as Level;
+                Level level = GameDirector.Instance.CurrentScene as Level ?? GameDirector.Instance.UnderlyingScene as Level;
                 if (level != null)
                 {
                     level.Score += ScoreConstants.RemovedRegularBlockPoints;
@@ -220,11 +222,11 @@ namespace HamstasKitties.Mechanics
 
                 UpdateCounters(block);
 
-                Level level = Director.Instance.CurrentScene as Level ?? Director.Instance.UnderlyingScene as Level;
+                Level level = GameDirector.Instance.CurrentScene as Level ?? GameDirector.Instance.UnderlyingScene as Level;
 
                 if (level != null)
                 {
-                    long blockPoints = Utils.GetScore(block);
+                    long blockPoints = GetScore(block);
                     level.Score += blockPoints;
 
                     new RisingUpPointsText(Level.HUDInfoLayer, block, blockPoints).AttachToParentLayer();
@@ -418,11 +420,11 @@ namespace HamstasKitties.Mechanics
                     return (canMoveToRight.HasValue && !canMoveToRight.Value);
 
                 case Block.Direction.Top:
-                    bool? canMoveToTop = (IsAnyBlockAtGivenGridPosition(block.RowIndex - 1, block.Column));
+                    bool? canMoveToTop = (IsAnyBlockAtGivenGridPosition(block.RowIndex - 1, block.ColumnIndex));
                     return (canMoveToTop.HasValue && !canMoveToTop.Value);
 
                 case Block.Direction.Bottom:
-                    bool? canMoveToBottom = (IsAnyBlockAtGivenGridPosition(block.RowIndex + 1, block.Column));
+                    bool? canMoveToBottom = (IsAnyBlockAtGivenGridPosition(block.RowIndex + 1, block.ColumnIndex));
                     return (canMoveToBottom.HasValue && !canMoveToBottom.Value);
 
                 default:
@@ -601,7 +603,7 @@ namespace HamstasKitties.Mechanics
 
         public void LoadState()
         {
-            TotalRemovedOrUpgradedBlocks = Utils.GetDataFromDictionary<long>(State.CurrentStateSettings, PersistableSettingsConstants.TotalRemovedAndupgradedItemsByLevelKey, 0);
+            TotalRemovedOrUpgradedBlocks = GetDataFromDictionary<long>(State.CurrentStateSettings, PersistableSettingsConstants.TotalRemovedAndupgradedItemsByLevelKey, 0);
             BoardState typesGrid = State.Get<BoardState>(PersistableSettingsConstants.CurrentBoardKey);
             foreach (BlockState blockState in typesGrid.BlocksOnBoard)
             {

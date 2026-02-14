@@ -16,6 +16,25 @@ namespace HamstasKitties.Core
         public bool IsSoundFXEnabled { get; set; } = true;
         public float MasterVolume { get; set; } = 1.0f;
 
+        /// <summary>
+        /// Gets or sets the currently playing song.
+        /// </summary>
+        public object CurrentPlayingSong { get; set; }
+
+        /// <summary>
+        /// Gets a value indicating whether the current playing song is disposed.
+        /// Stub implementation for MonoGame compatibility.
+        /// </summary>
+        public bool IsCurrentSongDisposed
+        {
+            get
+            {
+                // Stub: In the original Windows Phone implementation, this would check
+                // if the Song object was disposed. For MonoGame, we return false.
+                return false;
+            }
+        }
+
         public bool Initialize()
         {
             return true;

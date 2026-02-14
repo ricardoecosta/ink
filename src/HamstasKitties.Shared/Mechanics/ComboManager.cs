@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using HamstasKitties.Core;
 using HamstasKitties.UI;
 using HamstasKitties.Management;
 using HamstasKitties.Animation;
@@ -10,6 +11,7 @@ using HamstasKitties.GameModes;
 using HamstasKitties.Constants;
 using Microsoft.Xna.Framework.Audio;
 using HamstasKitties.Utils;
+using static HamstasKitties.Utils.Utils;
 
 namespace HamstasKitties.Mechanics
 {
@@ -27,7 +29,7 @@ namespace HamstasKitties.Mechanics
 
             OnComboUpdated += (comboMultiplier) =>
             {
-                Level level = Director.Instance.CurrentScene as Level ?? Director.Instance.UnderlyingScene as Level;
+                Level level = GameDirector.Instance.CurrentScene as Level ?? GameDirector.Instance.UnderlyingScene as Level;
                 if (comboMultiplier == GlobalConstants.ComboMultiplierWhenToGenerateRainbowHamsta)
                 {
                     level.GenerateRainbowHamsta();
@@ -35,7 +37,7 @@ namespace HamstasKitties.Mechanics
                 else if (comboMultiplier % 2 == 0)
                 {
                     ComboSoundCounter = (byte)(++ComboSoundCounter % ComboSoundEffects.Length);
-                    Director.Instance.SoundManager.PlaySound(ComboSoundEffects[ComboSoundCounter]);
+                    GameDirector.Instance.SoundManager.PlaySound(ComboSoundEffects[ComboSoundCounter]);
                 }
             };
         }
@@ -123,10 +125,10 @@ namespace HamstasKitties.Mechanics
         private byte ComboSoundCounter = 1;
         private SoundEffect[] ComboSoundEffects = new SoundEffect[]
             {
-                Director.Instance.CurrentResourcesManager.GetCachedSoundEffect((int)Director.SoundEffectsAssets.Yeah),
-                Director.Instance.CurrentResourcesManager.GetCachedSoundEffect((int)Director.SoundEffectsAssets.Wooow),
-                Director.Instance.CurrentResourcesManager.GetCachedSoundEffect((int)Director.SoundEffectsAssets.Amazing),
-                Director.Instance.CurrentResourcesManager.GetCachedSoundEffect((int)Director.SoundEffectsAssets.Fantastic),
+                GameDirector.Instance.CurrentResourcesManager.GetCachedSoundEffect((int)GameDirector.SoundEffectsAssets.Yeah),
+                GameDirector.Instance.CurrentResourcesManager.GetCachedSoundEffect((int)GameDirector.SoundEffectsAssets.Wooow),
+                GameDirector.Instance.CurrentResourcesManager.GetCachedSoundEffect((int)GameDirector.SoundEffectsAssets.Amazing),
+                GameDirector.Instance.CurrentResourcesManager.GetCachedSoundEffect((int)GameDirector.SoundEffectsAssets.Fantastic),
             };
     }
 }

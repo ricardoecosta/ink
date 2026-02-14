@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
+using HamstasKitties.Core;
 using HamstasKitties.Management;
 
 namespace HamstasKitties.Persistence
@@ -11,20 +12,20 @@ namespace HamstasKitties.Persistence
     {
         public GameState()
         {
-            GameModeStates = new Dictionary<Director.GameModes, GameModeState>();
-            GameModeStates.Add(Director.GameModes.Classic, new GameModeState());
-            GameModeStates.Add(Director.GameModes.Countdown, new GameModeState());
-            GameModeStates.Add(Director.GameModes.GoldRush, new GameModeState());
-            GameModeStates.Add(Director.GameModes.ChillOut, new GameModeState());
+            GameModeStates = new Dictionary<GameDirector.GameModes, GameModeState>();
+            GameModeStates.Add(GameDirector.GameModes.Classic, new GameModeState());
+            GameModeStates.Add(GameDirector.GameModes.Countdown, new GameModeState());
+            GameModeStates.Add(GameDirector.GameModes.GoldRush, new GameModeState());
+            GameModeStates.Add(GameDirector.GameModes.ChillOut, new GameModeState());
             GlobalStats = new Dictionary<string, double>();
-            BestScores = new Dictionary<Director.GameModes, BestScore>();
+            BestScores = new Dictionary<GameDirector.GameModes, BestScore>();
         }
 
         /// <summary>
         /// Resets the saved game.
         /// </summary>
         /// <param name="mode"></param>
-        public GameModeState ResetSavedGame(Director.GameModes mode)
+        public GameModeState ResetSavedGame(GameDirector.GameModes mode)
         {
             if (!GameModeStates.ContainsKey(mode))
             {
@@ -36,10 +37,10 @@ namespace HamstasKitties.Persistence
         }
 
         [DataMemberAttribute()]
-        public Dictionary<Director.GameModes, GameModeState> GameModeStates { get; set; }
+        public Dictionary<GameDirector.GameModes, GameModeState> GameModeStates { get; set; }
 
         [DataMemberAttribute()]
-        public Dictionary<Director.GameModes, BestScore> BestScores { get; set; }
+        public Dictionary<GameDirector.GameModes, BestScore> BestScores { get; set; }
 
         [DataMemberAttribute()]
         public Dictionary<string, double> GlobalStats { get; set; }

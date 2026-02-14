@@ -11,6 +11,7 @@ using HamstasKitties.Scenes.GameModes;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using HamstasKitties.Utils;
+using static HamstasKitties.Utils.Utils;
 using HamstasKitties.Social.Gaming;
 using HamstasKitties.Constants;
 using HamstasKitties.Scenes.Menus;

@@ -1,3 +1,6 @@
+#nullable disable
+#nullable disable
+
 using HamstasKitties.Core.Interfaces;
 
 namespace HamstasKitties.Services.Firebase;
@@ -10,9 +13,11 @@ public class HybridAchievementService : IAchievementService
 {
     private readonly Dictionary<string, AchievementData> _achievements = new();
     private readonly ISettingsManager _settingsManager;
+#pragma warning disable CS0414 // Field is assigned but its value is never used
     private bool _isInitialized;
+#pragma warning restore CS0414
 
-    public event EventHandler<AchievementUnlockedEventArgs>? OnAchievementUnlocked;
+    public event EventHandler<AchievementUnlockedEventArgs> OnAchievementUnlocked;
 
     public HybridAchievementService(ISettingsManager settingsManager)
     {
@@ -58,7 +63,7 @@ public class HybridAchievementService : IAchievementService
         return _achievements.Values;
     }
 
-    public AchievementData? GetAchievementById(string id)
+    public AchievementData GetAchievementById(string id)
     {
         return _achievements.TryGetValue(id, out var achievement) ? achievement : null;
     }

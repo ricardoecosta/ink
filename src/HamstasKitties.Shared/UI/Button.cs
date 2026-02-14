@@ -7,6 +7,8 @@ using Microsoft.Xna.Framework;
 using HamstasKitties.Core;
 using HamstasKitties.Extensions;
 using HamstasKitties.Animation;
+using Timer = HamstasKitties.Animation.Timer;
+using Texture = HamstasKitties.UI.Texture;
 
 namespace HamstasKitties.UI
 {

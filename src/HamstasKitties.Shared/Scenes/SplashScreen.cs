@@ -5,6 +5,8 @@ using HamstasKitties.Management;
 using HamstasKitties.Constants;
 using System.IO;
 using HamstasKitties.Animation;
+using Microsoft.Xna.Framework;
+using Timer = HamstasKitties.Animation.Timer;
 
 namespace HamstasKitties.Scenes
 {

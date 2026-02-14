@@ -2,15 +2,18 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using HamstasKitties.Core;
 using HamstasKitties.Animation;
 using HamstasKitties.UI;
 using HamstasKitties.Scenes;
 using HamstasKitties.Management;
 using HamstasKitties.GameModes;
 using HamstasKitties.Utils;
+using static HamstasKitties.Utils.Utils;
 using HamstasKitties.Constants;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework;
+using Timer = HamstasKitties.Animation.Timer;
 
 namespace HamstasKitties.Mechanics
 {
@@ -83,7 +86,7 @@ namespace HamstasKitties.Mechanics
 
                         // Matching mode sound effect
                         MatchingModeSoundCounter = (byte)(++MatchingModeSoundCounter % MatchingModeSounds.Length);
-                        Director.Instance.SoundManager.PlaySound(MatchingModeSounds[MatchingModeSoundCounter]);
+                        GameDirector.Instance.SoundManager.PlaySound(MatchingModeSounds[MatchingModeSoundCounter]);
                     }
                     else
                     {
@@ -91,7 +94,7 @@ namespace HamstasKitties.Mechanics
 
                         // Matching mode sound effect
                         MatchingModeSoundCounter = (byte)(++MatchingModeSoundCounter % MatchingModeSounds.Length);
-                        Director.Instance.SoundManager.PlaySound(MatchingModeSounds[MatchingModeSoundCounter]);
+                        GameDirector.Instance.SoundManager.PlaySound(MatchingModeSounds[MatchingModeSoundCounter]);
                     }
 
                     foreach (Block currentBlock in MatchedBlocks)
@@ -341,10 +344,10 @@ namespace HamstasKitties.Mechanics
         private static byte MatchingModeSoundCounter = 1;
         private readonly SoundEffect[] MatchingModeSounds =
         {
-            Director.Instance.CurrentResourcesManager.GetCachedSoundEffect((int)Director.SoundEffectsAssets.HamstaMatchingSound1),
-            Director.Instance.CurrentResourcesManager.GetCachedSoundEffect((int)Director.SoundEffectsAssets.HamstaMatchingSound2),
-            Director.Instance.CurrentResourcesManager.GetCachedSoundEffect((int)Director.SoundEffectsAssets.HamstaMatchingSound3),
-            Director.Instance.CurrentResourcesManager.GetCachedSoundEffect((int)Director.SoundEffectsAssets.HamstaMatchingSound4)
+            GameDirector.Instance.CurrentResourcesManager.GetCachedSoundEffect((int)GameDirector.SoundEffectsAssets.HamstaMatchingSound1),
+            GameDirector.Instance.CurrentResourcesManager.GetCachedSoundEffect((int)GameDirector.SoundEffectsAssets.HamstaMatchingSound2),
+            GameDirector.Instance.CurrentResourcesManager.GetCachedSoundEffect((int)GameDirector.SoundEffectsAssets.HamstaMatchingSound3),
+            GameDirector.Instance.CurrentResourcesManager.GetCachedSoundEffect((int)GameDirector.SoundEffectsAssets.HamstaMatchingSound4)
         };
     }
 }

@@ -7,6 +7,7 @@ using HamstasKitties.UI;
 using Microsoft.Xna.Framework;
 using HamstasKitties.Sprites;
 using HamstasKitties.Utils;
+using static HamstasKitties.Utils.Utils;
 using HamstasKitties.Management;
 using HamstasKitties.Core;
 using HamstasKitties.Scenes;
@@ -18,6 +19,7 @@ using Microsoft.Xna.Framework.Audio;
 using HamstasKitties.Scenes.Menus;
 using HamstasKitties.Core.Interfaces;
 using HamstasKitties.Constants;
+using HamstasKitties.Social.Achievements;
 
 namespace HamstasKitties.Layers
 {

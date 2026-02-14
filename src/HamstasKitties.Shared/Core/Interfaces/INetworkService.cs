@@ -1,3 +1,5 @@
+#nullable disable
+
 namespace HamstasKitties.Core.Interfaces;
 
 public interface INetworkService
@@ -7,6 +9,6 @@ public interface INetworkService
     void Initialize();
     void CheckConnection();
 
-    event EventHandler? OnNetworkOnline;
-    event EventHandler? OnNetworkOffline;
+    event EventHandler OnNetworkOnline;
+    event EventHandler OnNetworkOffline;
 }

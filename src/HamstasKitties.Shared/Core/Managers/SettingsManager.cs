@@ -70,6 +70,18 @@ namespace HamstasKitties.Core
             Data.Remove(id);
         }
 
+        /// <summary>
+        /// Adds new Known Type for serialization.
+        /// </summary>
+        /// <param name="type"></param>
+        public void AddKnownType(Type type)
+        {
+            if (type != null && !KnownTypes.Contains(type))
+            {
+                KnownTypes.Add(type);
+            }
+        }
+
         #region IManager Implementation
 
         public bool Initialize()

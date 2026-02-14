@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Input.Touch;
-using ProjectMercury.Renderers;
+using HamstasKitties.Particles.Renderers;
 using HamstasKitties.Animation;
 using HamstasKitties.Interaction;
 using HamstasKitties.Persistence;
@@ -750,9 +750,20 @@ namespace HamstasKitties.Core
         private float SlowMotionSpeedRatio { get; set; }
         private Animation.Timer SlowMotionTimer { get; set; }
 
+        /// <summary>
+        /// Verifies if user background music is playing. Stub implementation for MonoGame compatibility.
+        /// </summary>
+        public virtual void VerifyIfUserBackgroundMusicIsPlaying(string gameTitle)
+        {
+            // Stub: Windows Phone specific functionality not available in MonoGame
+            // Original implementation checked MediaPlayer.GameHasControl
+        }
+
         private List<IApplicationDeactivationAware> ApplicationDeactivationAwareComponents { get; set; }
         private List<IApplicationActivationAware> ApplicationActivationAwareComponents { get; set; }
 
+#pragma warning disable CS0414 // Field is assigned but its value is never used
         private static readonly String ZuneMusicOnLastRunSetting = "DS-ZuneMusicOnLastRun";
+#pragma warning restore CS0414
     }
 }

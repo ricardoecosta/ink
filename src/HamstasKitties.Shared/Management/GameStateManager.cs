@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using HamstasKitties.Core;
 using HamstasKitties.Core.Interfaces;
 using HamstasKitties.Persistence;
 using HamstasKitties.Constants;
@@ -58,7 +59,7 @@ namespace HamstasKitties.Management
         /// Resets the saved game.
         /// </summary>
         /// <param name="mode"></param>
-        public GameModeState ResetSavedGame(Director.GameModes mode)
+        public GameModeState ResetSavedGame(GameDirector.GameModes mode)
         {
             return State.ResetSavedGame(mode);
         }
@@ -68,7 +69,7 @@ namespace HamstasKitties.Management
         /// </summary>
         /// <param name="mode"></param>
         /// <returns></returns>
-        public GameModeState GetGameModeState(Director.GameModes mode)
+        public GameModeState GetGameModeState(GameDirector.GameModes mode)
         {
             if (State != null && State.GameModeStates.ContainsKey(mode))
             {

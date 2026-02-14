@@ -14,6 +14,7 @@ using HamstasKitties.Extras;
 using HamstasKitties.Animation.Tween;
 using HamstasKitties.Animation;
 using HamstasKitties.Utils;
+using static HamstasKitties.Utils.Utils;
 using HamstasKitties.Constants;
 using Microsoft.Xna.Framework.Graphics;
 

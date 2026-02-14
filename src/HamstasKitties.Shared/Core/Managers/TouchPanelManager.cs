@@ -1,6 +1,7 @@
 using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Input.Touch;
 using HamstasKitties.Core.Interfaces;
 
 namespace HamstasKitties.Core
@@ -22,8 +23,8 @@ namespace HamstasKitties.Core
 
         public void ReadInput()
         {
-            TouchPanelState touchState = TouchPanel.GetState();
-            if (touchState.IsConnected && touchState.Count > 0)
+            TouchCollection touchState = TouchPanel.GetState();
+            if (touchState.Count > 0)
             {
                 TouchPosition = touchState[0].Position;
             }

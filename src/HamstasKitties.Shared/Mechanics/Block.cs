@@ -3,15 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using HamstasKitties.UI;
-using HnK.Management;
-using HnK.Scenes;
+using HamstasKitties.Constants;
+using HamstasKitties.Management;
+using HamstasKitties.Core;
+using HamstasKitties.Scenes;
+using HamstasKitties.GameModes;
 using HamstasKitties.Animation;
 using HamstasKitties.Utils;
+using static HamstasKitties.Utils.Utils;
 using HamstasKitties.Animation.Tween;
 using HamstasKitties.Extensions;
+using HamstasKitties.Sprites;
 using System.Runtime.Serialization;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework;
+using Timer = HamstasKitties.Animation.Timer;
 
 namespace HamstasKitties.Mechanics
 {

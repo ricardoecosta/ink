@@ -7,6 +7,7 @@ using HamstasKitties.UI;
 using Microsoft.Xna.Framework;
 using HamstasKitties.Sprites;
 using HamstasKitties.Utils;
+using static HamstasKitties.Utils.Utils;
 using HamstasKitties.Management;
 using HamstasKitties.Core;
 using HamstasKitties.Scenes;
@@ -27,7 +28,7 @@ namespace HamstasKitties.Layers
         {
             base.Initialize();
 
-            Texture background = GameDirector.Instance.GlobalResourcesManager.GetCachedTexture((int)GameDirector.TextureAssets.AchivementUnlockedBaseShield);
+            Texture background = GameDirector.Instance.GlobalResourcesManager.GetCachedTexture((int)GameDirector.TextureAssets.AchievementUnlockedBaseShield);
 
             LayerObject backgroundLayerObject = new LayerObject(this, background, Vector2.Zero, Vector2.Zero);
             backgroundLayerObject.AttachToParentLayer();

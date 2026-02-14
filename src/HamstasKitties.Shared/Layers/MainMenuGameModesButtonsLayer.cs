@@ -7,15 +7,18 @@ using HamstasKitties.UI;
 using Microsoft.Xna.Framework;
 using HamstasKitties.Sprites;
 using HamstasKitties.Utils;
+using static HamstasKitties.Utils.Utils;
 using HamstasKitties.Management;
 using HamstasKitties.Core;
 using HamstasKitties.Scenes;
+using HamstasKitties.Scenes.Menus;
 using HamstasKitties.GameModes;
 using HamstasKitties.Extras;
 using Microsoft.Xna.Framework.Media;
 using HamstasKitties.Animation;
 using Microsoft.Xna.Framework.Audio;
 using HamstasKitties.Constants;
+using HamstasKitties.Animation.Tween;
 
 namespace HamstasKitties.Layers
 {
