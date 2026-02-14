@@ -1,0 +1,6 @@
+AchievementsBackground = 0 0 480 606
+AchievementsOverLayer = 481 0 480 606
+GameOptionsBackground = 0 607 480 280
+LeaderboardBackground = 962 0 480 606
+LeaderboardOverLayer = 1443 0 480 606
+ProfileOptionsBackground = 481 607 480 210

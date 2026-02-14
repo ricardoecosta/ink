@@ -1,0 +1,7 @@
+AchievementOkButton = 0 648 240 90
+AchievementShareButton = 281 431 240 90
+AchivementUnlockedBaseShield = 961 0 480 800
+AchivementUnlockedHamsta = 0 431 280 216
+HamstaBlink = 0 739 200 200
+Loading = 1442 0 480 800
+MainTitle = 0 0 960 430
