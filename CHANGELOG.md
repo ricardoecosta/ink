@@ -8,9 +8,20 @@ All changes for the MonoGame modernization port from legacy Xamarin to modern .N
 
 ### Phase 0: Project Setup
 *Started: 2026-02-14*
+*Completed: 2026-02-14*
 
 #### Added
 - Initial CHANGELOG.md for tracking all port changes
+- New SDK-style .NET 8 solution structure (`HamstasKitties.sln`)
+- `src/HamstasKitties.Shared/` - Shared game library project
+- `src/HamstasKitties.Desktop/` - Desktop MonoGame project with Content pipeline
+- `tests/HamstasKitties.Shared.Tests/` - xUnit test project with FluentAssertions
+- `.github/workflows/build.yml` - CI/CD pipeline (build + test + lint)
+- `Directory.Build.props` - Common build settings (warnings as errors, code style)
+- `.editorconfig` - Editor configuration for consistent formatting
+
+#### Changed
+- Renamed legacy `HamstasKitties.sln` to `HamstasKitties.Legacy.sln`
 
 ---
 
@@ -32,7 +43,7 @@ Each change entry follows this format:
 
 | Phase | Status | Start Date | End Date |
 |-------|--------|------------|----------|
-| 0: Project Setup | In Progress | 2026-02-14 | - |
+| 0: Project Setup | Complete | 2026-02-14 | 2026-02-14 |
 | 1: Core Abstractions | Not Started | - | - |
 | 2: Shared Code Migration | Not Started | - | - |
 | 3: UI Framework Migration | Not Started | - | - |
