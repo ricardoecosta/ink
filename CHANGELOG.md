@@ -6,6 +6,42 @@ All changes for the MonoGame modernization port from legacy Xamarin to modern .N
 
 ## [Unreleased]
 
+### Phase 2: Shared Code Migration
+*Started: 2026-02-14*
+*Completed: 2026-02-14*
+
+#### Added
+- **Core Framework** (`src/HamstasKitties.Shared/Core/`):
+  - `Director.cs` - Abstract game director with scene management
+  - `ScreenResolutionManager.cs` - Resolution scaling
+  - `DeviceInfo.cs` - Device information stubs
+- **UI Framework** (`src/HamstasKitties.Shared/UI/`):
+  - `LayerObject.cs` - Base renderable/touchable class
+  - `Layer.cs`, `Scene.cs` - Scene graph components
+  - `Texture.cs`, `ITouchable.cs`, `IUpdateable.cs`
+- **Animation** (`src/HamstasKitties.Shared/Animation/`):
+  - `Timer.cs` - Animation timer with events
+  - Tween functions (Back, Bounce, Circular, etc.)
+- **Game Mechanics** (`src/HamstasKitties.Shared/Mechanics/`):
+  - `Block.cs` (1326 lines) - Core block logic, WINDOWS_PHONE code removed
+  - `LevelBoardController.cs` (718 lines) - Match-3 board management
+  - `MatchingGroup.cs`, `ComboManager.cs` - Match grouping and combo system
+  - `BlocksMiniPhysicsEngine.cs` - Collision detection
+- **State Management** (`src/HamstasKitties.Shared/Management/`):
+  - `GameStateManager.cs`, `GameState.cs`, `GameModeState.cs`
+  - `BlockState.cs`, `BoardState.cs`, `BestScore.cs`
+- **Utilities** (`src/HamstasKitties.Shared/Utils/`):
+  - `Rand.cs` - Static random number generator
+  - `PhysicsTools.cs` - Line intersection, distance calculations
+
+#### Removed
+- All particle effect code (ProjectMercury) from Block.cs
+- All `#if WINDOWS_PHONE` conditionals from migrated files
+
+#### Changed
+- All namespaces updated from `GameLibrary.*` to `HamstasKitties.*`
+- 50 total source files migrated to shared project
+
 ### Phase 1: Core Abstractions
 *Started: 2026-02-14*
 *Completed: 2026-02-14*
@@ -76,7 +112,7 @@ Each change entry follows this format:
 |-------|--------|------------|----------|
 | 0: Project Setup | Complete | 2026-02-14 | 2026-02-14 |
 | 1: Core Abstractions | Complete | 2026-02-14 | 2026-02-14 |
-| 2: Shared Code Migration | Not Started | - | - |
+| 2: Shared Code Migration | Complete | 2026-02-14 | 2026-02-14 |
 | 3: UI Framework Migration | Not Started | - | - |
 | 4: Platform Projects | Not Started | - | - |
 | 5: Firebase Integration | Not Started | - | - |
